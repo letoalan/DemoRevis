@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atelier Guidé : Analyse Critique de Documents | DemoRevis</title>
+  <meta name="description" content="Atelier interactif d'entraînement à l'épreuve d'analyse critique de document(s) en HGGSP Première. Tirage au sort de sujet (UE ou Abstention), guidage méthodique pas à pas, auto-sauvegarde et export PDF.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏛️</text></svg>">
+  <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+  <div id="reading-progress"></div>
+
+  <!-- Header Nav -->
+  <header class="header-nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand" aria-label="DemoRevis Accueil">
+        <span class="brand-badge" style="background: linear-gradient(135deg, #1d4ed8, #b45309);">DR</span>
+        <div>
+          <span class="brand-text">DemoRevis</span>
+          <span class="brand-sub">HGGSP 1ère Générale</span>
+        </div>
+      </a>
+
+      <nav aria-label="Navigation principale">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Accueil</a></li>
+          <li><a href="p1.html" class="nav-link">P1 : Intro</a></li>
+          <li><a href="p2.html" class="nav-link">P2 : Axe 1</a></li>
+          <li><a href="p3.html" class="nav-link">P3 : Axe 2</a></li>
+          <li><a href="p4.html" class="nav-link">P4 : Conclusion UE</a></li>
+          <li><a href="quiz.html" class="nav-link">Quiz</a></li>
+          <li><a href="analyse.html" class="nav-link active" style="color: var(--color-primary); font-weight: 700;">Analyse Doc</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-controls">
+        <button type="button" class="theme-btn" id="theme-toggle-btn" aria-label="Changer le thème">🌙</button>
+        <button type="button" class="menu-toggle" id="mobile-menu-toggle" aria-label="Ouvrir le menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobile-nav-drawer">
+    <ul>
+      <li><a href="index.html" class="nav-link">Accueil</a></li>
+      <li><a href="p1.html" class="nav-link">P1 : Introduction (Qu'est-ce que la démocratie ?)</a></li>
+      <li><a href="p2.html" class="nav-link">P2 : Axe 1 (Démocratie directe et représentative)</a></li>
+      <li><a href="p3.html" class="nav-link">P3 : Axe 2 (Avancées et reculs des démocraties)</a></li>
+      <li><a href="p4.html" class="nav-link">P4 : Conclusion (L'UE et la démocratie)</a></li>
+      <li><a href="quiz.html" class="nav-link">Grand Quiz Général</a></li>
+      <li><a href="analyse.html" class="nav-link active">Exercice d'Analyse Critique de Document</a></li>
+    </ul>
+  </div>
+
+  <main class="main-content">
+    <!-- Hero Banner -->
+    <section class="page-hero">
+      <div class="hero-meta">
+        <span class="period-badge">Épreuve Officielle HGGSP</span>
+        <span class="level-tag">Méthodologie du Baccalauréat</span>
+        <span class="level-tag">Coefficient Spécialité</span>
+      </div>
+      <h1 class="page-title">Studio d'Analyse Critique de Documents</h1>
+      <p class="page-lead">
+        L'analyse critique de document(s) est un exercice canonique de la spécialité HGGSP en Première. Tirez au sort votre sujet, confrontez un texte théorique et un document iconographique de presse, puis rédigez votre composition guidée étape par étape avant d'exporter votre devoir au format PDF.
+      </p>
+    </section>
+
+    <!-- Guide Méthodologique Officiel Repliable -->
+    <section class="study-section">
+      <div class="doc-box" style="border: 2px solid var(--color-primary); background: var(--bg-card-glass);">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+          <div>
+            <span class="tag-badge tag-evenement">Méthodologie Officielle</span>
+            <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--color-primary); margin-top: 0.25rem;">
+              Les 4 règles d'or de l'Étude Critique de Documents en HGGSP
+            </h3>
+          </div>
+          <button type="button" class="flashcard-btn doc-corrige-toggle" aria-expanded="false">
+            <span class="corrige-arrow">▼ Afficher</span> la fiche méthode
+          </button>
+        </div>
+
+        <div class="transcription-body" style="margin-top: 1.25rem; border-top: 1px dashed var(--border-color); padding-top: 1.25rem;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem;">
+            <div style="background: var(--bg-elevated); padding: 1rem; border-radius: var(--radius-sm);">
+              <h4 style="font-weight: 700; color: var(--color-primary); margin-bottom: 0.35rem;">1. Citer et Décrire</h4>
+              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">
+                Ne faites jamais d'affirmation sans vous appuyer sur le texte (entre guillemets) ou sur l'image (décrire les personnages, symboles, chiffres).
+              </p>
+            </div>
+
+            <div style="background: var(--bg-elevated); padding: 1rem; border-radius: var(--radius-sm);">
+              <h4 style="font-weight: 700; color: var(--color-primary); margin-bottom: 0.35rem;">2. Expliquer sans Paraphraser</h4>
+              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">
+                La citation n'est que le point de départ. Apportez immédiatement vos connaissances de cours pour expliquer <em>pourquoi</em> et <em>comment</em>.
+              </p>
+            </div>
+
+            <div style="background: var(--bg-elevated); padding: 1rem; border-radius: var(--radius-sm);">
+              <h4 style="font-weight: 700; color: var(--color-primary); margin-bottom: 0.35rem;">3. Mobiliser les Penseurs</h4>
+              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">
+                Enrichissez votre analyse en convoquant les auteurs au programme : Benjamin Constant, Alexis de Tocqueville, Andrew Moravcsik, Aristote.
+              </p>
+            </div>
+
+            <div style="background: var(--bg-elevated); padding: 1rem; border-radius: var(--radius-sm);">
+              <h4 style="font-weight: 700; color: var(--color-primary); margin-bottom: 0.35rem;">4. Regard Critique (Conclusion)</h4>
+              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">
+                Interrogez l'objectivité, les partis pris, la fonction de l'auteur (universitaire, dessinateur de presse, média) et les non-dits du document.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Studio Application Mount Point -->
+    <div id="analyse-studio-app"></div>
+
+  </main>
+
+  <!-- Modal Lightbox -->
+  <div class="image-modal" id="image-modal" role="dialog" aria-modal="true" aria-label="Agrandissement de l'image">
+    <div class="modal-content">
+      <button type="button" class="modal-close-btn" aria-label="Fermer la modal">✕</button>
+      <img src="" alt="" class="modal-img" />
+      <div class="modal-caption"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4 class="footer-heading">DemoRevis</h4>
+        <p class="footer-desc">Atelier d'Analyse Critique de Documents — HGGSP 1ère Générale</p>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="p1.html">P1 : Introduction</a></li>
+          <li><a href="p2.html">P2 : Axe 1</a></li>
+          <li><a href="p3.html">P3 : Axe 2</a></li>
+          <li><a href="p4.html">P4 : Conclusion UE</a></li>
+          <li><a href="quiz.html">Grand Quiz</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P3 : Axe 2 — Avancées et reculs des démocraties | DemoRevis</title>
+  <meta name="description" content="Axe 2 HGGSP Première : La pensée d'Alexis de Tocqueville, les risques de tyrannie de la majorité et de despotisme doux, et 4 cas historiques : Allemagne 1933, Chili 1973, Portugal 1974, Espagne 1975-1981.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏛️</text></svg>">
+  <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+  <div id="reading-progress"></div>
+
+  <!-- Header Nav -->
+  <header class="header-nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand" aria-label="DemoRevis Accueil">
+        <span class="brand-badge" style="background: linear-gradient(135deg, #1d4ed8, #b45309);">DR</span>
+        <div>
+          <span class="brand-text">DemoRevis</span>
+          <span class="brand-sub">HGGSP 1ère Générale</span>
+        </div>
+      </a>
+
+      <nav aria-label="Navigation principale">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Accueil</a></li>
+          <li><a href="p1.html" class="nav-link">P1 : Intro</a></li>
+          <li><a href="p2.html" class="nav-link">P2 : Axe 1</a></li>
+          <li><a href="p3.html" class="nav-link active">P3 : Axe 2</a></li>
+          <li><a href="p4.html" class="nav-link">P4 : Conclusion UE</a></li>
+          <li><a href="quiz.html" class="nav-link">Quiz</a></li>
+          <li><a href="analyse.html" class="nav-link" style="color: var(--color-primary); font-weight: 700;">Analyse Doc</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-controls">
+        <button type="button" class="theme-btn" id="theme-toggle-btn" aria-label="Changer le thème">🌙</button>
+        <button type="button" class="menu-toggle" id="mobile-menu-toggle" aria-label="Ouvrir le menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobile-nav-drawer">
+    <ul>
+      <li><a href="index.html" class="nav-link">Accueil</a></li>
+      <li><a href="p1.html" class="nav-link">P1 : Introduction (Qu'est-ce que la démocratie ?)</a></li>
+      <li><a href="p2.html" class="nav-link">P2 : Axe 1 (Démocratie directe et représentative)</a></li>
+      <li><a href="p3.html" class="nav-link active">P3 : Axe 2 (Avancées et reculs des démocraties)</a></li>
+      <li><a href="p4.html" class="nav-link">P4 : Conclusion (L'UE et la démocratie)</a></li>
+      <li><a href="quiz.html" class="nav-link">Grand Quiz Général</a></li>
+      <li><a href="analyse.html" class="nav-link">Exercice d'Analyse Critique de Document</a></li>
+    </ul>
+  </div>
+
+  <main class="main-content">
+    <!-- Hero Banner -->
+    <section class="page-hero">
+      <div class="hero-meta">
+        <span class="period-badge">Thème 1 • Axe 2</span>
+        <span class="level-tag">Tocqueville (1835) — Crises du XXe siècle</span>
+        <span class="level-tag">Durée estimée : 55 min</span>
+      </div>
+      <h1 class="page-title">Avancées et reculs des démocraties : crises, périls et contre-pouvoirs</h1>
+      <p class="page-lead">
+        La démocratie n'est pas un acquis irréversible. Pour Alexis de Tocqueville, elle porte en elle-même le germe de sa propre autodestruction par l'individualisme et la tyrannie de la majorité. De l'effondrement de la République de Weimar en 1933 au coup d'État chilien de 1973, en passant par les transitions réussies du Portugal (1974) et de l'Espagne (1975-1981), explorez comment les contre-pouvoirs déterminent la survie des régimes démocratiques.
+      </p>
+    </section>
+
+    <!-- Dual Audio Station -->
+    <section class="audio-station" 
+      data-briefing-src="assets/mp3/p3-briefing.mp3" 
+      data-podcast-src="assets/mp3/p3-podcast.mp3">
+      <div class="audio-head">
+        <div>
+          <span class="audio-pill">Audio Station Axe 2</span>
+          <h2 class="audio-title">Écouter la leçon : Briefing express ou Podcast complet</h2>
+        </div>
+        <div style="font-size: 0.85rem; color: var(--text-subtle);">Synthèse ou cours approfondi</div>
+      </div>
+
+      <div class="audio-mode-selector" role="tablist">
+        <button type="button" class="audio-mode-btn active" data-track="briefing" role="tab" aria-selected="true">
+          ⚡ Briefing de synthèse (1 min 30)
+        </button>
+        <button type="button" class="audio-mode-btn" data-track="podcast" role="tab" aria-selected="false">
+          🎙️ Podcast de cours approfondi (23 min)
+        </button>
+      </div>
+
+      <audio preload="metadata"></audio>
+
+      <div class="audio-controls">
+        <button type="button" class="play-toggle-btn" aria-label="Écouter">▶</button>
+        <div class="progress-bar-container" title="Cliquer pour naviguer dans l'audio">
+          <div class="progress-bar-fill"></div>
+        </div>
+        <div class="time-display">
+          <span class="current-time">00:00</span> / <span class="duration-time">--:--</span>
+        </div>
+        <button type="button" class="speed-toggle-btn" aria-label="Vitesse de lecture 1 fois">1×</button>
+      </div>
+
+      <!-- Transcription -->
+      <div class="transcription-container">
+        <button type="button" class="transcription-toggle" aria-expanded="false">
+          <span>📜 Lire la transcription textuelle</span>
+          <span class="toggle-icon">▼</span>
+        </button>
+
+        <div class="transcription-body" id="transcript-briefing">
+          <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--color-primary);">
+            Points clés du Briefing Axe 2
+          </h4>
+          <p>
+            Dans cet axe 2, nous étudions la fragilité constitutive de la démocratie :
+          </p>
+          <ul style="margin: 0.75rem 0 0.75rem 1.5rem; line-height: 1.6;">
+            <li><strong>L'inquiétude de Tocqueville :</strong> dans <em>De la démocratie en Amérique</em>, il identifie deux risques mortels : la <em>tyrannie de la majorité</em> (conformisme intellectuel étouffant les minorités) et le <em>despotisme doux</em> (citoyens individualistes qui abandonnent leur liberté à un État tutélaire). Pour y remédier, il met en avant les <strong>contre-pouvoirs</strong> (indépendance des juges, liberté de la presse, associations, décentralisation).</li>
+            <li><strong>Les 4 études de cas historiques :</strong>
+              <ul>
+                <li><em>Allemagne (1933) :</em> crise économique et nomination d'Hitler. En l'absence de cour constitutionnelle dotée du pouvoir de contrôler la constitutionnalité des lois, la démocratie est détruite de l'intérieur en six mois.</li>
+                <li><em>Chili (1973) :</em> polarisation extrême et double conformisme irréconciliable débouchant sur le coup d'État militaire de Pinochet contre Allende.</li>
+                <li><em>Portugal (1974) :</em> la Révolution des Œillets, où l'alliance de l'armée et du peuple met fin à la dictature de Caetano et reconstruit des contre-pouvoirs solides.</li>
+                <li><em>Espagne (1975-1981) :</em> mort de Franco, transition démocratique menée par Juan Carlos Ier et le peuple, sanctionnée par la Constitution de 1978 et confirmée par l'échec du putsch militaire de Tejero le 23 février 1981.</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div class="transcription-body" id="transcript-podcast" style="display: none;">
+          <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--color-primary);">
+            Transcription intégrale du Podcast de cours
+          </h4>
+          <p>
+            Alexis de Tocqueville se rend aux États-Unis en 1831 pour y étudier le système pénitentiaire, mais il en revient avec un chef-d'œuvre de sociologie politique. Il observe que le moteur de l'histoire moderne est l'égalisation des conditions : la fin des ordres d'Ancien Régime et l'avènement de l'individu autonome. Mais cette égalité comporte un piège psychologique redoutable : l'atomisation sociale. Les individus, absorbés par leur bien-être matériel, se désintéressent de la chose publique. L'abstention progresse, les élus s'autonomisent, et la majorité impose une pression conformiste irrésistible.
+          </p>
+          <p style="margin-top: 0.5rem;">
+            Au XXe siècle, ces craintes théoriques se vérifient tragiquement. L'expérience de la République de Weimar démontre que la règle majoritaire sans garanties juridictionnelles conduit au suicide institutionnel. À l'inverse, les transitions méditerranéennes des années 1970 montrent que la démocratie peut renaître et s'enraciner durablement lorsque les contre-pouvoirs civils et militaires s'allient pour défendre la légalité constitutionnelle.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Question directrice & Idées clés -->
+    <section class="study-section">
+      <div class="section-head">
+        <h2 class="section-title"><span>🎯</span> Question Directrice & Idées Clés</h2>
+        <span class="section-pill">Notions fondamentales</span>
+      </div>
+
+      <div style="background: var(--bg-card); border-left: 4px solid var(--color-primary); padding: 1.5rem; border-radius: var(--radius-sm); margin-bottom: 2rem; box-shadow: var(--shadow-sm);">
+        <p style="font-size: 1.15rem; font-weight: 700; color: var(--text-main);">
+          ❓ Problématique : Comment la théorie tocquevillienne des contre-pouvoirs permet-elle de comprendre la chute ou la résilience des démocraties contemporaines ?
+        </p>
+      </div>
+
+      <div class="key-ideas-grid">
+        <div class="key-idea-card">
+          <div class="key-idea-number">01</div>
+          <h3 class="key-idea-title">L'individualisme et l'inquiétude de Tocqueville</h3>
+          <p class="key-idea-text">
+            Tocqueville théorise les dérives de l'égalité : le citoyen se replie sur sa sphère domestique, s'abstient de participer à la vie politique et s'en remet à un État bienveillant mais liberticide (le « despotisme doux »).
+          </p>
+        </div>
+
+        <div class="key-idea-card">
+          <div class="key-idea-number">02</div>
+          <h3 class="key-idea-title">La tyrannie de la majorité et le conformisme</h3>
+          <p class="key-idea-text">
+            Dans une société démocratique, la pression de l'opinion dominante peut étouffer toute pensée critique. Lorsque deux blocs idéologiques s'affrontent sans compromis, ce « double conformisme » conduit à la guerre civile ou au coup d'État.
+          </p>
+        </div>
+
+        <div class="key-idea-card">
+          <div class="key-idea-number">03</div>
+          <h3 class="key-idea-title">Le rôle vital des contre-pouvoirs</h3>
+          <p class="key-idea-text">
+            Sans cour constitutionnelle indépendante, sans liberté d'association ni presse critique, les démocraties succombent à la tentation totalitaire (Weimar 1933). Avec des contre-pouvoirs vigilants, elles résistent aux coups de force (Espagne 1981).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Schéma Heuristique Mermaid -->
+    <section class="study-section">
+      <div class="section-head">
+        <h2 class="section-title"><span>🧩</span> Schéma Heuristique : Le Cycle Tocquevillien et les Contre-pouvoirs</h2>
+        <span class="section-pill">Mécanisme théorique</span>
+      </div>
+
+      <div class="mermaid-card">
+        <div class="mermaid-toolbar">
+          <button type="button" class="btn-zoom-in" title="Zoom avant">🔍 +</button>
+          <button type="button" class="btn-zoom-out" title="Zoom arrière">🔍 −</button>
+          <button type="button" class="btn-zoom-reset" title="Réinitialiser l'affichage">↺ 100%</button>
+          <button type="button" class="btn-fullscreen" title="Mode plein écran">⛶</button>
+        </div>
+        <div class="mermaid-box">
+          <div class="mermaid">
+flowchart TD
+    EGAL[Égalisation des conditions & Démocratie moderne] --> INDIV[Individualisme & repli sur la sphère privée]
+
+    INDIV --> ABST[Abstention électorale & désintérêt politique]
+    INDIV --> CONF[Conformisme intellectuel de l'opinion]
+
+    ABST --> AUTO[Autonomisation et dérive incontrôlée des élus]
+    CONF --> TYR[Tyrannie de la majorité & étouffement des minorités]
+
+    AUTO & TYR --> DANG[DANGER MORTEL : Despotisme doux ou Régime totalitaire]
+
+    DANG -.->|Effondrement si absence de défenses| WEIMAR[Exemple Allemagne 1933 : Aucune cour gardienne]
+    DANG -.->|Polarisation destructrice| CHILI[Exemple Chili 1973 : Double conformisme irréconciliable]
+
+    REM[REMÈDES ESSENTIELS : Les Contre-Pouvoirs] --> CP1[Justice constitutionnelle indépendante]
+    REM --> CP2[Presse libre & associations citoyennes]
+    REM --> CP3[Alliance armée démocratique et peuple mobilisé]
+
+    CP1 & CP2 & CP3 -.->|Résilience et survie| RESIL[Exemples réussis : Portugal 1974 & Espagne 1981]
+
+    style EGAL fill:#eff6ff,stroke:#1d4ed8,stroke-width:2px,color:#1e3a8a
+    style DANG fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#991b1b
+    style REM fill:#f0fdf4,stroke:#16a34a,stroke-width:2px,color:#14532d
+    style RESIL fill:#ecfdf5,stroke:#059669,stroke-width:2px,color:#065f46
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grand Tableau d'Analyse Comparée des 4 Cas Historiques -->
+    <section class="study-section">
+      <div class="section-head">
+        <h2 class="section-title"><span>📊</span> Analyse Comparée : Les 4 Épreuves Historiques</h2>
+        <span class="section-pill">Études de cas</span>
+      </div>
+
+      <div class="table-responsive" style="margin-bottom: 2rem;">
+        <table class="academic-table">
+          <thead>
+            <tr>
+              <th>Cas Historique</th>
+              <th>Contexte de Crise</th>
+              <th>Mécanisme de Recul ou d'Avancée</th>
+              <th>Rôle des Contre-Pouvoirs</th>
+              <th>Portée Historique</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Allemagne de Weimar (1933)</strong></td>
+              <td>Crise de 1929, 6 millions de chômeurs, instabilité parlementaire aiguë.</td>
+              <td>Hitler est nommé légalement chancelier le 30 janvier 1933, puis dissout la démocratie en 6 mois (incendie du Reichstag, pleins pouvoirs).</td>
+              <td><strong>Absents ou impuissants :</strong> la Cour constitutionnelle n'a pas le pouvoir de vérifier la constitutionnalité des lois ; institutions subverties de l'intérieur.</td>
+              <td>Démonstration qu'une démocratie purement procédurale peut voter légalement sa propre destruction.</td>
+            </tr>
+            <tr>
+              <td><strong>Chili (1973)</strong></td>
+              <td>Élection du socialiste Allende (1970), réformes agraires, blocus économique américain et grèves massives.</td>
+              <td>Polarisation extrême entre prolétariat et bourgeoisie ; affrontement de deux conformismes idéologiques irréconciliables. Coup d'État du général Pinochet (11 septembre 1973).</td>
+              <td><strong>Broyés par l'armée :</strong> Parlement fermé, partis interdits, cour suprême complaisante, répression sanglante (stade de Santiago).</td>
+              <td>Rupture violente d'une longue tradition constitutionnelle latino-américaine par l'autoritarisme néolibéral.</td>
+            </tr>
+            <tr>
+              <td><strong>Portugal (1974)</strong></td>
+              <td>Dictature de l'Estado Novo (Salazar puis Caetano), guerres coloniales interminables et ruineuses en Afrique.</td>
+              <td>Révolution des Œillets (25 avril 1974) : capitaines révoltés (MFA) soutenus massivement par la population civile dans les rues de Lisbonne.</td>
+              <td><strong>Création de contre-pouvoirs spontanés :</strong> alliance des militaires démocrates et des syndicats ouvriers ; élection d'une Assemblée constituante.</td>
+              <td>Début de la « troisième vague de démocratisation » mondiale (Huntington) et intégration européenne.</td>
+            </tr>
+            <tr>
+              <td><strong>Espagne (1975-1981)</strong></td>
+              <td>Mort du général Franco (novembre 1975) après 36 ans de franquisme et de guerre civile refoulée.</td>
+              <td>Transition pacifique impulsée par Juan Carlos Ier et Adolfo Suárez (Loi pour la réforme politique 1976, Constitution démocratique de 1978).</td>
+              <td><strong>Résistance décisive :</strong> lors du putsch militaire du colonel Tejero le 23-F 1981 aux Cortes, le roi ordonne la fidélité à la Constitution et le peuple manifeste.</td>
+              <td>Modèle mondial de transition constitutionnelle consensuelle par le pacte civique et institutionnel.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Galerie Iconographique -->
+    <section class="study-section">
+      <div class="section-head">
+        <h2 class="section-title"><span>🖼️</span> Galerie Iconographique de l'Axe 2</h2>
+        <span class="section-pill">Figures & Archives</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+        
+        <article class="art-card">
+          <div class="art-img-box">
+            <img src="./assets/img/tocqueville.jpg" alt="Portrait d'Alexis de Tocqueville" class="art-img" loading="lazy">
+          </div>
+          <div class="art-caption">
+            <span class="tag-badge tag-politique">Penseur central</span>
+            <h3 class="art-title">Alexis de Tocqueville (1805-1859)</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0.4rem 0;">
+              Magistrat et écrivain, auteur de <em>De la démocratie en Amérique</em>, penseur de l'égalité et de ses périls liberticides.
+            </p>
+          </div>
+        </article>
+
+        <article class="art-card">
+          <div class="art-img-box">
+            <img src="./assets/img/hitler-weimar.jpg" alt="Cabinet Hitler le 30 janvier 1933" class="art-img" loading="lazy">
+          </div>
+          <div class="art-caption">
+            <span class="tag-badge tag-guerre">Allemagne 1933</span>
+            <h3 class="art-title">La chute de Weimar (1933)</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0.4rem 0;">
+              Hitler et son cabinet de coalition : l'absence de cour constitutionnelle gardienne permit la destruction rapide des libertés.
+            </p>
+          </div>
+        </article>
+
+        <article class="art-card">
+          <div class="art-img-box">
+            <img src="./assets/img/allende-chili.jpg" alt="Salvador Allende, président du Chili" class="art-img" loading="lazy">
+          </div>
+          <div class="art-caption">
+            <span class="tag-badge tag-evenement">Chili 1973</span>
+            <h3 class="art-title">Salvador Allende au Chili</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0.4rem 0;">
+              Renversé par le putsch du 11 septembre 1973 après un affrontement destructeur entre deux conformismes idéologiques.
+            </p>
+          </div>
+        </article>
+
+        <article class="art-card">
+          <div class="art-img-box">
+            <img src="./assets/img/oeillets-portugal.jpg" alt="Révolution des Œillets à Lisbonne en 1974" class="art-img" loading="lazy">
+          </div>
+          <div class="art-caption">
+            <span class="tag-badge tag-institution">Portugal 1974</span>
+            <h3 class="art-title">La Révolution des Œillets</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0.4rem 0;">
+              Le 25 avril 1974 à Lisbonne : l'alliance spontanée des militaires démocrates et du peuple met fin à la dictature salazariste.
+            </p>
+          </div>
+        </article>
+
+        <article class="art-card">
+          <div class="art-img-box">
+            <img src="./assets/img/espagne-tejero.jpg" alt="Coup d'État manqué du 23-F en Espagne" class="art-img" loading="lazy">
+          </div>
+          <div class="art-caption">
+            <span class="tag-badge tag-evenement">Espagne 1981</span>
+            <h3 class="art-title">Le coup d'État du 23-F déjoué</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0.4rem 0;">
+              Le lieutenant-colonel Tejero pistolet au poing aux Cortes : le refus du roi Juan Carlos et l'union populaire sauvent la démocratie.
+            </p>
+          </div>
+        </article>
+
+        <article class="art-card">
+          <div class="art-img-box">
+            <img src="./assets/img/espagne-transition.jpg" alt="Transition démocratique espagnole" class="art-img" loading="lazy">
+          </div>
+          <div class="art-caption">
+            <span class="tag-badge tag-politique">Espagne 1978</span>
+            <h3 class="art-title">La Constitution espagnole de 1978</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0.4rem 0;">
+              L'adoption par référendum d'une des constitutions les plus avancées garantit l'État de droit et l'autonomie des régions.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Flashcards Axe 2 -->
+    <section class="study-section">
+      <div class="section-head">
+        <h2 class="section-title"><span>🧠</span> Cartes Mémoire Flash (Axe 2)</h2>
+        <span class="section-pill">Mémorisation active</span>
+      </div>
+      <div id="flashcards-container"></div>
+    </section>
+
+    <!-- Mini-Quiz Axe 2 -->
+    <section class="study-section">
+      <div class="section-head">
+        <h2 class="section-title"><span>🎯</span> Auto-Évaluation de l'Axe 2 (10 questions)</h2>
+        <span class="section-pill">Quiz P3</span>
+      </div>
+      <div id="page-quiz"></div>
+    </section>
+
+    <!-- Lexique Axe 2 -->
+    <section class="study-section">
+      <div class="section-head">
+        <h2 class="section-title"><span>📖</span> Lexique & Notions de l'Axe 2</h2>
+        <span class="section-pill">Concepts clés</span>
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+        <input type="text" id="lexique-search" class="analyse-textarea" style="min-height: 44px; padding: 0.5rem 1rem;" placeholder="Rechercher une notion (ex: Tyrannie de la majorité, Contre-pouvoir)..." />
+      </div>
+
+      <div class="lexique-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+        <div class="doc-box lexique-item">
+          <h4 class="lexique-term" style="color: var(--color-primary); font-size: 1.05rem; margin-bottom: 0.35rem;">Tyrannie de la majorité</h4>
+          <p class="lexique-def" style="font-size: 0.9rem; color: var(--text-muted);">Risque propre aux sociétés démocratiques où la majorité numérique impose sa volonté sans respecter les droits des minorités et exerce un conformisme moral.</p>
+        </div>
+
+        <div class="doc-box lexique-item">
+          <h4 class="lexique-term" style="color: var(--color-primary); font-size: 1.05rem; margin-bottom: 0.35rem;">Despotisme doux</h4>
+          <p class="lexique-def" style="font-size: 0.9rem; color: var(--text-muted);">Forme inédite d'oppression théorisée par Tocqueville : un État tutélaire et prévoyant décharge les citoyens de penser et d'agir, en échange de leur bien-être matériel.</p>
+        </div>
+
+        <div class="doc-box lexique-item">
+          <h4 class="lexique-term" style="color: var(--color-primary); font-size: 1.05rem; margin-bottom: 0.35rem;">Contre-pouvoir</h4>
+          <p class="lexique-def" style="font-size: 0.9rem; color: var(--text-muted);">Institution, corps constitué (juges, presse, syndicats, associations) capable de limiter et contrôler l'autorité du pouvoir exécutif et législatif.</p>
+        </div>
+
+        <div class="doc-box lexique-item">
+          <h4 class="lexique-term" style="color: var(--color-primary); font-size: 1.05rem; margin-bottom: 0.35rem;">Cour constitutionnelle</h4>
+          <p class="lexique-def" style="font-size: 0.9rem; color: var(--text-muted);">Juridiction suprême chargée de contrôler la conformité des lois à la Constitution, empêchant ainsi une majorité parlementaire d'abroger les droits fondamentaux.</p>
+        </div>
+
+        <div class="doc-box lexique-item">
+          <h4 class="lexique-term" style="color: var(--color-primary); font-size: 1.05rem; margin-bottom: 0.35rem;">Transition démocratique</h4>
+          <p class="lexique-def" style="font-size: 0.9rem; color: var(--text-muted);">Processus historique de passage négocié ou révolutionnaire d'un régime autoritaire ou dictatorial à une démocratie libérale et pluraliste.</p>
+        </div>
+
+        <div class="doc-box lexique-item">
+          <h4 class="lexique-term" style="color: var(--color-primary); font-size: 1.05rem; margin-bottom: 0.35rem;">Coup d'État</h4>
+          <p class="lexique-def" style="font-size: 0.9rem; color: var(--text-muted);">Prise illégale et soudaine du pouvoir politique par la force, généralement menée par une faction militaire ou un groupe au sein de l'État.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pager -->
+    <nav class="pager-nav" aria-label="Navigation entre chapitres">
+      <a href="p2.html" class="pager-btn secondary">← Chapitre précédent : Axe 1</a>
+      <a href="p4.html" class="pager-btn primary">Chapitre suivant : Conclusion (L'Union Européenne) →</a>
+    </nav>
+  </main>
+
+  <!-- Modal Lightbox -->
+  <div class="image-modal" id="image-modal" role="dialog" aria-modal="true" aria-label="Agrandissement de l'image">
+    <div class="modal-content">
+      <button type="button" class="modal-close-btn" aria-label="Fermer la modal">✕</button>
+      <img src="" alt="" class="modal-img" />
+      <div class="modal-caption"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4 class="footer-heading">DemoRevis</h4>
+        <p class="footer-desc">Module Axe 2 : Avancées et reculs des démocraties — HGGSP 1ère</p>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="p1.html">Introduction : La démocratie</a></li>
+          <li><a href="p2.html">Axe 1 : Démocratie directe et représentative</a></li>
+          <li><a href="p4.html">Conclusion : L'Union européenne</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.__PAGE_QUIZ_KEY__ = 'axe2';
+    window.__PAGE_QUIZ_TITLE__ = 'Quiz Axe 2 : Avancées et reculs des démocraties';
+    window.__PAGE_QUIZ_BADGE__ = 'Auto-évaluation P3';
+    window.__FLASHCARD_KEY__ = 'axe2';
+  </script>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

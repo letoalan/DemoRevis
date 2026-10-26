@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DemoRevis — Comprendre un régime politique : la démocratie | HGGSP 1ère</title>
+  <meta name="description" content="Plateforme complète de révision HGGSP Première générale sur la démocratie : cours complets, schémas heuristiques Mermaid, briefings audio express et podcasts approfondis, analyse critique guidée de documents et quiz interactifs.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏛️</text></svg>">
+  <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+  <div id="reading-progress"></div>
+
+  <!-- En-tête & Barre de navigation -->
+  <header class="header-nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand" aria-label="DemoRevis Accueil">
+        <span class="brand-badge" style="background: linear-gradient(135deg, #1d4ed8, #b45309);">DR</span>
+        <div>
+          <span class="brand-text">DemoRevis</span>
+          <span class="brand-sub">HGGSP 1ère Générale</span>
+        </div>
+      </a>
+
+      <nav aria-label="Navigation principale">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link active">Accueil</a></li>
+          <li><a href="p1.html" class="nav-link">P1 : Intro</a></li>
+          <li><a href="p2.html" class="nav-link">P2 : Axe 1</a></li>
+          <li><a href="p3.html" class="nav-link">P3 : Axe 2</a></li>
+          <li><a href="p4.html" class="nav-link">P4 : Conclusion UE</a></li>
+          <li><a href="quiz.html" class="nav-link">Quiz</a></li>
+          <li><a href="analyse.html" class="nav-link" style="color: var(--color-primary); font-weight: 700;">Analyse Doc</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-controls">
+        <button type="button" class="theme-btn" id="theme-toggle-btn" aria-label="Changer le thème">🌙</button>
+        <button type="button" class="menu-toggle" id="mobile-menu-toggle" aria-label="Ouvrir le menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Menu Mobile -->
+  <div class="mobile-nav" id="mobile-nav-drawer">
+    <ul>
+      <li><a href="index.html" class="nav-link active">Accueil</a></li>
+      <li><a href="p1.html" class="nav-link">P1 : Introduction (Qu'est-ce que la démocratie ?)</a></li>
+      <li><a href="p2.html" class="nav-link">P2 : Axe 1 (Démocratie directe et représentative)</a></li>
+      <li><a href="p3.html" class="nav-link">P3 : Axe 2 (Avancées et reculs des démocraties)</a></li>
+      <li><a href="p4.html" class="nav-link">P4 : Conclusion (L'UE et la démocratie)</a></li>
+      <li><a href="quiz.html" class="nav-link">Grand Quiz Général</a></li>
+      <li><a href="analyse.html" class="nav-link">Exercice d'Analyse Critique de Document</a></li>
+    </ul>
+  </div>
+
+  <main class="main-content">
+    <!-- Hero Banner -->
+    <section class="page-hero">
+      <div class="hero-meta">
+        <span class="period-badge">Programme Officiel de Première</span>
+        <span class="level-tag">HGGSP — Thème 1</span>
+        <span class="level-tag">Épreuve du Baccalauréat</span>
+        <a href="analyse.html" class="level-tag" style="text-decoration: none; background: var(--color-primary-soft); color: var(--color-primary); font-weight: 700; border: 1px solid var(--color-primary);" title="Accéder au studio d'analyse de documents">
+          ✍️ Studio d'Analyse de Documents
+        </a>
+      </div>
+      <h1 class="page-title">Comprendre un régime politique : la démocratie</h1>
+      <p class="page-lead">
+        De la démocratie directe athénienne au système représentatif contemporain, explorez les fondements philosophiques, les crises historiques et les dynamiques de l'Union européenne à travers des cours structurés, des schémas heuristiques, des briefings sonores et un outil interactif d'analyse critique guidée.
+      </p>
+    </section>
+
+    <!-- Grande Frise Synoptique -->
+    <section class="timeline-strip" aria-label="Frise chronologique et structure du thème">
+      <div class="timeline-header">
+        <h2 class="timeline-title"><span>🏛️</span> Le parcours de révision du Thème 1</h2>
+        <span style="font-size: 0.85rem; color: var(--text-subtle);">Cliquez sur une étape pour réviser</span>
+      </div>
+      <div class="timeline-track">
+        <a href="p1.html" class="timeline-step" style="text-decoration: none;">
+          <div class="timeline-date">Introduction</div>
+          <div class="timeline-desc">Qu'est-ce que la démocratie ? Typologie des régimes</div>
+        </a>
+        <a href="p2.html" class="timeline-step" style="text-decoration: none;">
+          <div class="timeline-date">Axe 1</div>
+          <div class="timeline-desc">Penser la démocratie : Directe (Athènes) & Représentative (Constant)</div>
+        </a>
+        <a href="p3.html" class="timeline-step" style="text-decoration: none;">
+          <div class="timeline-date">Axe 2</div>
+          <div class="timeline-desc">Avancées et reculs : Tocqueville, crises et contre-pouvoirs</div>
+        </a>
+        <a href="p4.html" class="timeline-step" style="text-decoration: none;">
+          <div class="timeline-date">Conclusion</div>
+          <div class="timeline-desc">L'Union Européenne et les défis du déficit démocratique</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Grille des 4 Chapitres de cours -->
+    <section class="study-section">
+      <div class="section-head">
+        <h2 class="section-title"><span>📚</span> Les 4 Modules d'Étude</h2>
+        <span class="section-pill">Cours & Audio-guides</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.75rem;">
+        
+        <!-- P1 Card -->
+        <article class="art-card">
+          <div class="art-img-box">
+            <img src="./assets/img/democratie-vote.png" alt="Illustration du vote et des élections démocratiques" class="art-img" loading="lazy">
+          </div>
+          <div class="art-caption">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span class="tag-badge tag-politique">Introduction</span>
+              <span style="font-size: 0.8rem; font-weight: 700; color: var(--color-primary);">Notions clés</span>
+            </div>
+            <h3 class="art-title">Qu'est-ce que la démocratie ? Fondements et typologie</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; margin: 0.5rem 0 1rem;">
+              Démocratie libérale, illibérale, autoritaire ou populaire : découvrez comment définir la souveraineté populaire, la séparation des pouvoirs, l'État de droit et l'alternance.
+            </p>
+            <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.8rem; color: var(--text-subtle);">⚡ Briefing • 🎙️ Podcast • 🧩 Schéma</span>
+              <a href="p1.html" class="pager-btn primary" style="padding: 0.4rem 0.85rem; font-size: 0.85rem;">Étudier P1 →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- P2 Card -->
+        <article class="art-card">
+          <div class="art-img-box">
+            <img src="./assets/img/athenes-institutions.jpg" alt="Institutions athéniennes de la démocratie directe" class="art-img" loading="lazy">
+          </div>
+          <div class="art-caption">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span class="tag-badge tag-institution">Axe 1</span>
+              <span style="font-size: 0.8rem; font-weight: 700; color: var(--color-primary);">Athènes & Constant</span>
+            </div>
+            <h3 class="art-title">Penser la démocratie : directe et représentative</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; margin: 0.5rem 0 1rem;">
+              De l'Ecclésia et l'Héliée athéniennes jusqu'à la réflexion de Benjamin Constant en 1819 : opposer la liberté des Anciens et celle des Modernes pour fonder la liberté politique.
+            </p>
+            <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.8rem; color: var(--text-subtle);">⚡ Briefing • 🎙️ Podcast • 🧩 Schéma</span>
+              <a href="p2.html" class="pager-btn primary" style="padding: 0.4rem 0.85rem; font-size: 0.85rem;">Étudier P2 →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- P3 Card -->
+        <article class="art-card">
+          <div class="art-img-box">
+            <img src="./assets/img/tocqueville.jpg" alt="Portrait d'Alexis de Tocqueville" class="art-img" loading="lazy">
+          </div>
+          <div class="art-caption">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span class="tag-badge tag-evenement">Axe 2</span>
+              <span style="font-size: 0.8rem; font-weight: 700; color: var(--color-primary);">Tocqueville & Crises</span>
+            </div>
+            <h3 class="art-title">Avancées et reculs des démocraties</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; margin: 0.5rem 0 1rem;">
+              L'inquiétude démocratique selon Tocqueville : individualisme, abstention et tyrannie de la majorité. Épreuve des faits : Allemagne 1933, Chili 1973, Portugal 1974 et Espagne 1975-1981.
+            </p>
+            <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.8rem; color: var(--text-subtle);">⚡ Briefing • 🎙️ Podcast • 🧩 Schéma</span>
+              <a href="p3.html" class="pager-btn primary" style="padding: 0.4rem 0.85rem; font-size: 0.85rem;">Étudier P3 →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- P4 Card -->
+        <article class="art-card">
+          <div class="art-img-box">
+            <img src="./assets/img/ue-institutions.png" alt="Schéma des institutions de l'Union européenne" class="art-img" loading="lazy">
+          </div>
+          <div class="art-caption">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span class="tag-badge tag-guerre">Conclusion</span>
+              <span style="font-size: 0.8rem; font-weight: 700; color: var(--color-primary);">Union Européenne</span>
+            </div>
+            <h3 class="art-title">L'Union Européenne et la démocratie</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; margin: 0.5rem 0 1rem;">
+              Délégation de souveraineté, séparation originale des pouvoirs et débat sur le « déficit démocratique » : la thèse d'Andrew Moravcsik face aux critiques contemporaines.
+            </p>
+            <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.8rem; color: var(--text-subtle);">⚡ Briefing • 🎙️ Podcast • 🧩 Schéma</span>
+              <a href="p4.html" class="pager-btn primary" style="padding: 0.4rem 0.85rem; font-size: 0.85rem;">Étudier P4 →</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Bloc Studio d'Analyse Critique en vedette -->
+    <section class="study-section" style="background: linear-gradient(135deg, var(--bg-card), var(--bg-elevated)); border: 2px solid var(--color-primary); border-radius: var(--radius-lg); padding: 2.5rem; margin-top: 3rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+        <div>
+          <span class="quiz-badge" style="background: var(--color-primary); color: #fff;">Atelier Pratique Bac</span>
+          <h2 style="font-family: var(--font-heading); font-size: 1.75rem; margin-top: 0.5rem; color: var(--text-main);">
+            Studio d'Analyse Critique de Documents
+          </h2>
+        </div>
+        <a href="analyse.html" class="pager-btn primary" style="font-size: 1rem; padding: 0.65rem 1.5rem;">
+          Lancer l'atelier guidé →
+        </a>
+      </div>
+
+      <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.6; max-width: 850px; margin-bottom: 1.75rem;">
+        Entraînez-vous aux exigences officielles de l'épreuve de spécialité HGGSP avec un tirage au sort aléatoire parmi les 2 sujets du programme, un guide pas à pas pour structurer votre argumentation (présentation, problématique, plan en sous-parties avec citations et auteurs, conclusion critique), la sauvegarde automatique de votre brouillon et l'exportation directe en PDF conforme.
+      </p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem;">
+          <div style="font-weight: 700; color: var(--color-primary); margin-bottom: 0.5rem;">Sujet A : L'Union Européenne</div>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0.5rem;">
+            « Le fonctionnement de l'UE est-il le sujet d'un débat concernant son manque de démocratie ? »
+          </p>
+          <div style="font-size: 0.8rem; color: var(--text-subtle);">
+            📄 Texte d'Andrew Moravcsik (2003) + 🎨 Dessin de Vadot (2017)
+          </div>
+        </div>
+
+        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem;">
+          <div style="font-weight: 700; color: var(--color-accent); margin-bottom: 0.5rem;">Sujet B : L'Abstention électorale</div>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0.5rem;">
+            « Montrez que le principal défi proposé aux démocraties libérales est aujourd'hui constitué par l'abstention. »
+          </p>
+          <div style="font-size: 0.8rem; color: var(--text-subtle);">
+            📄 Texte de Michel Winock sur Benjamin Constant (2009) + 📊 Infographie Le Parisien (2021)
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Outils d'Évaluation & Quiz -->
+    <section class="study-section" style="margin-top: 3rem;">
+      <div class="section-head">
+        <h2 class="section-title"><span>🎯</span> Espace Auto-Évaluation</h2>
+        <span class="section-pill">Contrôle continu</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+        <div class="art-card" style="padding: 1.5rem;">
+          <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem;">Grand Quiz Général</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+            Testez vos connaissances sur l'ensemble du Thème 1 avec 10 questions transversales, explications détaillées et calcul instantané de votre score.
+          </p>
+          <a href="quiz.html" class="pager-btn primary" style="display: inline-block;">Accéder au Grand Quiz →</a>
+        </div>
+
+        <div class="art-card" style="padding: 1.5rem;">
+          <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem;">Cartes Mémoire Flash (40 cartes)</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+            Mémorisez les notions fondamentales, institutions, penseurs et dates clés grâce à nos jeux de cartes interactives recto/verso avec navigation clavier.
+          </p>
+          <a href="quiz.html#flashcards-section" class="pager-btn secondary" style="display: inline-block;">S'entraîner aux Flashcards →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal Lightbox -->
+  <div class="image-modal" id="image-modal" role="dialog" aria-modal="true" aria-label="Agrandissement de l'image">
+    <div class="modal-content">
+      <button type="button" class="modal-close-btn" aria-label="Fermer la modal">✕</button>
+      <img src="" alt="" class="modal-img" />
+      <div class="modal-caption"></div>
+    </div>
+  </div>
+
+  <!-- Pied de page -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4 class="footer-heading">DemoRevis</h4>
+        <p class="footer-desc">
+          Plateforme pédagogique interactive conçue pour les révisions de spécialité Histoire-Géographie, Géopolitique et Sciences Politiques (HGGSP) en classe de Première.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Modules de cours</h4>
+        <ul class="footer-links">
+          <li><a href="p1.html">Introduction : La démocratie</a></li>
+          <li><a href="p2.html">Axe 1 : Démocratie directe et représentative</a></li>
+          <li><a href="p3.html">Axe 2 : Avancées et reculs</a></li>
+          <li><a href="p4.html">Conclusion : L'Union européenne</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Exercices & Évaluations</h4>
+        <ul class="footer-links">
+          <li><a href="analyse.html">Exercice d'Analyse Critique Guidée</a></li>
+          <li><a href="quiz.html">Grand Quiz Récapitulatif</a></li>
+          <li><a href="quiz.html#flashcards-section">Flashcards de révision</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>DemoRevis — Conforme au programme officiel de l'Éducation Nationale • HGGSP Première</span>
+    </div>
+  </footer>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

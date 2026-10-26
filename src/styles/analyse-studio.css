@@ -86,3 +86,22 @@
 .doc-box-img-wrap:hover img {
   transform: scale(1.02);
 }
+
+@media (max-width: 640px) {
+  .analyse-hero {
+    padding: 1.25rem 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: var(--radius-md);
+  }
+  .doc-box {
+    padding: 1.25rem 1rem;
+    border-radius: var(--radius-md);
+  }
+  .doc-box-title {
+    font-size: 1.05rem;
+  }
+  .doc-box-body {
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+}

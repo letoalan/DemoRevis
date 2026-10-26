@@ -10,26 +10,26 @@ L'ensemble des styles du projet a été restructuré en 21 modules indépendants
 | :--- | :---: | :--- |
 | `variables.css` | 83 | Palette HSL / Hex, polices, tokens d'espacement, rayons de courbure, ombres. |
 | `base.css` | 36 | Normalisation CSS, structure du `<body>`, layout principal et conteneurs. |
-| `navigation.css` | 155 | Barre de navigation supérieure, logo typographique, liens de pages et menu mobile drawer. |
+| `navigation.css` | 175 | Barre de navigation supérieure, logo typographique, liens de pages et menu mobile drawer animé. |
 | `hero.css` | 122 | Bannière Hero académique, badges de périodisation, typographie hero. |
-| `hero-video.css` | 115 | Intégration iframe YouTube en arrière-plan plein écran avec overlay dégradé sombre/clair. |
+| `hero-video.css` | 132 | Intégration iframe YouTube en arrière-plan plein écran avec overlay dégradé sombre/clair et adaptation smartphone. |
 | `audio-player.css` | 185 | Station audio, barre de défilement, bouton lecture/pause, horodatage et zone de transcription. |
-| `dual-audio.css` | 43 | Sélecteur à deux onglets (Briefing express vs Podcast de cours approfondi). |
-| `cards.css` | 111 | Cartes d'idées maîtresses, question directrice, mind maps et boîtes d'analyse. |
-| `mermaid-base.css` | 184 | Conteneur des diagrammes Mermaid, barre d'outils de zoom (+, -, reset), surface drag-to-pan. |
-| `mermaid-nodes.css` | 155 | Stylisation des nœuds SVG Mermaid, contrastes typographiques, variantes sombres. |
-| `tables.css` | 69 | Tableaux comparatifs et synthétiques : en-têtes gradient, bordures, première colonne accentuée. |
-| `gallery.css` | 180 | Grille d'œuvres d'art et documents d'archive, légendes historiques, zoom modal. |
-| `flashcards.css` | 129 | Cartes mémoires 3D à retournement (flip card), verso 100% opaque, boutons de navigation. |
-| `quiz.css` | 139 | Interface des questionnaires à choix multiples : questions, options, retours explicatifs, score. |
-| `analyse-studio.css`| 89 | Disposition split-screen de l'atelier d'analyse, prévisualisation documentaire, barre d'état. |
+| `dual-audio.css` | 57 | Sélecteur à deux onglets (Briefing express vs Podcast approfondi) et bascule tactile mobile. |
+| `cards.css` | 127 | Cartes d'idées maîtresses, question directrice, mind maps et boîtes d'analyse avec adaptation smartphone. |
+| `mermaid-base.css` | 170 | Conteneur des diagrammes Mermaid, barre d'outils de zoom (+, -, reset avec % dynamique, plein écran), surface drag-to-pan. |
+| `mermaid-nodes.css` | 160 | Stylisation des nœuds SVG Mermaid, typographie 16px, titres gras, contrastes typographiques et variantes sombres. |
+| `tables.css` | 153 | Tableaux académiques et comparatifs : en-têtes sticky, zébrure des lignes, première colonne mise en valeur, tags. |
+| `gallery.css` | 181 | Grille d'œuvres d'art et documents d'archive, légendes historiques, zoom modal. |
+| `flashcards.css` | 164 | Cartes mémoires 3D à retournement (flip card), verso 100% opaque, format tactile smartphone. |
+| `quiz.css` | 163 | Interface des questionnaires à choix multiples avec boutons tactiles adaptés aux smartphones. |
+| `analyse-studio.css`| 108 | Disposition split-screen de l'atelier d'analyse, prévisualisation documentaire, adaptation mobile. |
 | `analyse-form.css` | 134 | Formulaire de rédaction guidée, étapes méthodologiques, nom/prénom, styles d'impression. |
 | `analyse-hints.css`| 84 | Échafaudage à 3 boutons d'indices (Question, Mots-clés, Indice) et encadrés d'aide. |
-| `lexique.css` | 136 | Grille du glossaire des notions clés, recherche temps réel et modale Lightbox. |
-| `footer.css` | 155 | Pied de page académique haut de gamme : 4 colonnes, badges, liens animés et bouton de retour haut. |
-| `responsive-core.css`| 175 | Requêtes média pour mobile et tablette : header, hero, audio station, conteneurs généraux. |
-| `responsive-schemes.css`| 68 | Adaptation mobile des schémas Mermaid et des tableaux synthétiques. |
-| `responsive-views.css`| 146 | Adaptation mobile de la galerie d'images, des flashcards, du studio d'analyse et du footer. |
+| `lexique.css` | 187 | Grille du glossaire des notions clés, recherche temps réel et modale Lightbox. |
+| `footer.css` | 167 | Pied de page académique haut de gamme : 4 colonnes, badges, liens animés et bouton de retour haut. |
+| `responsive-core.css`| 188 | Requêtes média pour mobile et tablette : header, hero, audio station, safe-area-insets smartphone. |
+| `responsive-schemes.css`| 154 | Adaptation mobile des schémas Mermaid, toolbar tactile et tableaux synthétiques défilables. |
+| `responsive-views.css`| 149 | Adaptation smartphone de la galerie, flashcards, studio d'analyse, lexique et navigation. |
 
 ---
 

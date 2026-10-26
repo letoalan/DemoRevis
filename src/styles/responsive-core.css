@@ -171,5 +171,19 @@
     padding: 1rem;
     font-size: 0.9rem;
   }
+}
 
+@media (max-width: 480px) {
+  .main-content {
+    padding: 1rem 0.75rem calc(2rem + env(safe-area-inset-bottom, 0px));
+  }
+  .header-nav {
+    padding: 0.5rem 0.75rem;
+  }
+  .brand-sub {
+    display: none;
+  }
+  .page-title {
+    font-size: 1.35rem;
+  }
 }

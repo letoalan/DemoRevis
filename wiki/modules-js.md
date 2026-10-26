@@ -34,7 +34,7 @@ Orchestre le cycle de vie de la page lors du `DOMContentLoaded` :
 ### C. [`ui-elements.js`](../src/modules/ui-elements.js) (103 lignes)
 * **Barre de lecture** : calcule le pourcentage de défilement vertical et actualise `#reading-progress`.
 * **Drawer Mobile** : ouverture/fermeture fluide avec fermeture au clic extérieur et touche Échap.
-* **Lightbox Image & Schémas** : agrandit les documents iconographiques en haute définition avec légende complète et blocage du défilement d'arrière-plan.
+* **Lightbox Universelle (Agrandir & Rétrécir au clic)** : détection universelle par délégation d'événements rendant toutes les images cliquables pour agrandissement HD, et rétrécissement automatique immédiat au clic sur l'image agrandie, sur le fond ou sur la touche Échap.
 * **Accordéons de corrigés** : déploiement animé des corrigés d'entraînement.
 * **Filtre du lexique** : recherche dynamique en temps réel dans les termes et définitions.
 

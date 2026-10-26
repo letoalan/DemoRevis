@@ -16,31 +16,30 @@
         <div class="mermaid-box">
           <div class="mermaid">
 flowchart TD
-    CIT["👥 <b>CITOYENS DES 27 ÉTATS MEMBRES DE L'UE</b><br/>Double légitimité démocratique : directe (eurodéputés) et indirecte (gouvernements)"]
+    CIT["👥 <b>CITOYENS DES 27 ÉTATS MEMBRES DE L'UE</b><br/>Double légitimité démocratique : directe (Parlement) et indirecte (Conseils)"]
 
-    CIT -->|Suffrage universel direct tous les 5 ans| PE["<b>🏛️ Parlement Européen (Strasbourg)</b><br/>• 720 eurodéputés élus directement par les citoyens<br/>• Co-législateur à égalité stricte avec le Conseil<br/>• Vote l'investiture & contrôle la Commission"]
-    
-    CIT -->|Élections nationales dans les 27 pays| GOUV["<b>🤝 Gouvernements des 27 États Membres</b><br/>Légitimité démocratique nationale"]
+    CIT -->|Suffrage direct tous les 5 ans| PE
+    CIT -->|Élections nationales| CONSEILS
 
-    GOUV -->|Chefs d'État et de gouvernement| CE["<b>👑 Conseil Européen (Bruxelles)</b><br/>Fixe les grandes orientations et priorités politiques"]
-    GOUV -->|Ministres nationaux selon la thématique| CUE["<b>💼 Conseil de l'Union Européenne</b><br/>Représente les États ; co-législateur avec le Parlement"]
+    PE["<b>🏛️ Parlement Européen (Strasbourg)</b><br/>• 720 députés élus directement par les citoyens<br/>• Co-législateur & investit la Commission"]
+    CONSEILS["<b>👑 Conseil Européen & 💼 Conseil de l'UE</b><br/>• Chefs d'État (orientations stratégiques)<br/>• Ministres des 27 (co-législateur des États)"]
 
-    subgraph TRIANGLE["LE TRIANGLE INSTITUTIONNEL EUROPÉEN"]
-        CE -.->|Propose la présidence| COMM["<b>⚙️ Commission Européenne (Bruxelles)</b><br/>• 27 Commissaires indépendants<br/>• <u>Monopole d'initiative</u> des lois européennes<br/>• Gardienne des traités et exécutif"]
-        PE -->|Investit et peut censurer| COMM
-        
-        COMM -->|Propose directives et règlements| PE & CUE
-        PE & CUE -->|Codécision législative conjointe à égalité| LOI["<b>📜 ADOPTION DÉFINITIVE DES LOIS & BUDGET</b><br/>Directives et règlements applicables dans les 27 pays"]
+    subgraph MOTEUR["LE MOTEUR LÉGISLATIF EUROPÉEN"]
+        direction TB
+        COMM["<b>⚙️ Commission Européenne (Bruxelles)</b><br/>• 27 commissaires indépendants d'intérêt général<br/>• <u>Monopole exclusif d'initiative</u> des lois"]
+        LOI["<b>📜 ADOPTION DÉFINITIVE DES LOIS (Codécision)</b><br/>Approbation conjointe et obligatoire à égalité stricte"]
+        COMM -->|Propose directives et règlements| LOI
     end
 
-    CJUE["<b>⚖️ Cour de Justice de l'UE (Luxembourg)</b><br/>Garantit la primauté du droit européen et sanctionne les manquements"] -.->|Contrôle juridictionnel| COMM & PE & CUE
+    PE -.->|Examen & vote| LOI
+    CONSEILS -.->|Examen & vote| LOI
+
+    CJUE["<b>⚖️ Cour de Justice de l'UE (Luxembourg)</b><br/>Garantit l'État de droit et la primauté des traités"] -.->|Contrôle juridictionnel| COMM
 
     style CIT fill:#1e3a8a,stroke:#3b82f6,stroke-width:2.5px,color:#ffffff
-    style GOUV fill:#eff6ff,stroke:#1d4ed8,stroke-width:2px,color:#1e3a8a
-    style PE fill:#eff6ff,stroke:#1d4ed8,stroke-width:2.5px,color:#1e3a8a
-    style CE fill:#f5f3ff,stroke:#7c3aed,stroke-width:2px,color:#581c87
-    style CUE fill:#fef3c7,stroke:#b45309,stroke-width:2px,color:#92400e
-    style COMM fill:#f0fdf4,stroke:#16a34a,stroke-width:2.5px,color:#14532d
+    style PE fill:#eff6ff,stroke:#1d4ed8,stroke-width:2px,color:#1e3a8a
+    style CONSEILS fill:#f5f3ff,stroke:#7c3aed,stroke-width:2px,color:#581c87
+    style COMM fill:#f0fdf4,stroke:#16a34a,stroke-width:2px,color:#14532d
     style LOI fill:#ecfdf5,stroke:#059669,stroke-width:2.5px,color:#065f46
     style CJUE fill:#fdf2f8,stroke:#be185d,stroke-width:2px,color:#831843
           </div>

@@ -5,6 +5,11 @@ import fs from 'fs';
 function htmlIncludePlugin() {
   return {
     name: 'vite-plugin-html-include',
+    handleHotUpdate({ file, server }) {
+      if (file.endsWith('.html')) {
+        server.ws.send({ type: 'full-reload', path: '*' });
+      }
+    },
     transformIndexHtml: {
       order: 'pre',
       handler(html, { filename }) {

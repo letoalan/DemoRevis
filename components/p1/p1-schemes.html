@@ -11,34 +11,41 @@
           <button type="button" class="btn-zoom-out" title="Zoom arrière">🔍 Dézoom −</button>
           <button type="button" class="btn-zoom-reset" title="Réinitialiser l'affichage">↺ 100%</button>
           <button type="button" class="btn-fullscreen" title="Mode plein écran">⛶ Plein écran</button>
-          <span class="mermaid-hint">💡 Glissez avec la souris pour naviguer dans le schéma</span>
+          <span class="mermaid-hint">✨ Schéma synthétique • 100% visible sans défilement</span>
         </div>
         <div class="mermaid-box">
           <div class="mermaid">
 flowchart TD
-    REG["🏛️ <b>RÉGIMES POLITIQUES CONTEMPORAINS</b><br/>Classification selon l'origine, l'exercice et la limitation du pouvoir"]
+    REG["🏛️ <b>RÉGIMES POLITIQUES CONTEMPORAINS</b><br/>Classification selon la légitimité, l'exercice et la limitation du pouvoir"]
 
-    REG --> DEM["🗳️ <b>RÉGIMES DÉMOCRATIQUES</b><br/>Souveraineté populaire & État de droit"]
-    REG --> NON_DEM["⛔ <b>RÉGIMES NON DÉMOCRATIQUES</b><br/>Accaparement du pouvoir & absence d'alternance"]
+    REG --> DEM_TITRE
+    REG --> AUT_TITRE
 
     subgraph DEM_SUB["MODÈLES DÉMOCRATIQUES"]
-        DEM --> DL["<b>🏛️ Démocratie Libérale</b><br/><br/>• Élections libres, transparentes et régulières<br/>• Séparation stricte des 3 pouvoirs<br/>• Justice indépendante & contre-pouvoirs actifs<br/>• Protection constitutionnelle des libertés"]
-        DEM --> DIL["<b>⚠️ Démocratie Illibérale</b><br/><br/>• Élections maintenues mais compétition faussée<br/>• Domination de la majorité sans contre-pouvoirs<br/>• Tribunaux et presse sous tutelle du pouvoir<br/>• Droits des oppositions restreints"]
+        direction TB
+        DEM_TITRE["🗳️ <b>Souveraineté Populaire & État de Droit</b>"]
+        DL["<b>🏛️ Démocratie Libérale</b><br/>• Élections régulières, libres et transparentes<br/>• Séparation stricte des 3 pouvoirs de l'État<br/>• Justice indépendante & contre-pouvoirs actifs<br/>• Protection constitutionnelle des libertés"]
+        DIL["<b>⚠️ Démocratie Illibérale</b><br/>• Élections maintenues mais compétition faussée<br/>• Pouvoir majoritaire sans contre-pouvoirs effectifs<br/>• Tribunaux et médias sous pression politique continue"]
+        DEM_TITRE --> DL
+        DL --> DIL
     end
 
-    subgraph AUT_SUB["MODÈLES AUTORITAIRES & TOTALITAIRES"]
-        NON_DEM --> AU["<b>🛑 Régime Autoritaire</b><br/><br/>• Concentration du pouvoir (clan, armée ou chef)<br/>• Absence d'alternance politique démocratique<br/>• Pluralisme et opposition muselés ou interdits<br/>• Justice et médias subordonnés à l'exécutif"]
-        NON_DEM --> TOT["<b>☠️ Régime Totalitaire</b><br/><br/>• Parti unique & idéologie officielle exclusive<br/>• Terreur policière et surveillance de masse<br/>• Destruction intégrale de la société civile<br/>• Façade trompeuse de « démocratie populaire »"]
+    subgraph AUT_SUB["MODÈLES NON DÉMOCRATIQUES"]
+        direction TB
+        AUT_TITRE["⛔ <b>Confiscation & Absence d'Alternance</b>"]
+        AU["<b>🛑 Régime Autoritaire</b><br/>• Pouvoir concentré (junte, clan ou dirigeant unique)<br/>• Absence d'alternance et opposition muselée<br/>• Justice et organes de presse subordonnés à l'exécutif"]
+        TOT["<b>☠️ Régime Totalitaire</b><br/>• Parti unique & idéologie officielle exclusive<br/>• Surveillance de masse, terreur policière et culte du chef<br/>• Encadrement total de la société civile et de la jeunesse"]
+        AUT_TITRE --> AU
+        AU --> TOT
     end
 
     style REG fill:#1e3a8a,stroke:#3b82f6,stroke-width:2.5px,color:#ffffff
-    style DEM fill:#dbeafe,stroke:#1d4ed8,stroke-width:2.5px,color:#1e3a8a
-    style NON_DEM fill:#fee2e2,stroke:#dc2626,stroke-width:2.5px,color:#991b1b
-
-    style DL fill:#eff6ff,stroke:#1d4ed8,stroke-width:2.5px,color:#1e3a8a
-    style DIL fill:#fef3c7,stroke:#b45309,stroke-width:2.5px,color:#92400e
-    style AU fill:#fee2e2,stroke:#dc2626,stroke-width:2.5px,color:#991b1b
-    style TOT fill:#fecaca,stroke:#b91c1c,stroke-width:2.5px,color:#7f1d1d
+    style DEM_TITRE fill:#dbeafe,stroke:#1d4ed8,stroke-width:2px,color:#1e3a8a
+    style AUT_TITRE fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#991b1b
+    style DL fill:#eff6ff,stroke:#1d4ed8,stroke-width:2px,color:#1e3a8a
+    style DIL fill:#fef3c7,stroke:#b45309,stroke-width:2px,color:#92400e
+    style AU fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#991b1b
+    style TOT fill:#fecaca,stroke:#b91c1c,stroke-width:2px,color:#7f1d1d
           </div>
         </div>
       </div>

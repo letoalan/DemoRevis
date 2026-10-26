@@ -52,34 +52,53 @@ export function initLightbox() {
   const modalCaption = modal.querySelector('.modal-caption');
   const closeBtn = modal.querySelector('.modal-close-btn');
 
-  document.querySelectorAll('.art-img-box, .doc-box-img-wrap').forEach(box => {
-    box.addEventListener('click', () => {
-      const img = box.querySelector('img');
-      if (!img) return;
+  function openModal(img) {
+    if (!img || !img.src) return;
+    const card = img.closest('.art-card, .doc-box, .study-section, figure, article') || img.parentElement;
+    const title = card?.querySelector('.art-title, .doc-box-title, h3, h2')?.textContent?.trim() || img.alt || 'Document iconographique';
+    const source = card?.querySelector('.art-artist, .doc-box-source, figcaption, .tag-badge')?.textContent?.trim() || '';
 
-      const card = box.closest('.art-card') || box.closest('.doc-box');
-      const title = card?.querySelector('.art-title, .doc-box-title')?.textContent || img.alt || '';
-      const artist = card?.querySelector('.art-artist, .doc-box-source')?.textContent || '';
-
-      modalImg.src = img.src;
-      modalImg.alt = img.alt;
-      modalCaption.innerHTML = `
-        <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.25rem;">${title}</h3>
-        <p style="font-size: 0.9rem; color: var(--text-muted);">${artist}</p>
-      `;
-      modal.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    });
-  });
+    modalImg.src = img.src;
+    modalImg.alt = img.alt || title;
+    modalCaption.innerHTML = `
+      <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.25rem;">${title}</h3>
+      ${source ? `<p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0.35rem;">${source}</p>` : ''}
+      <p style="font-size: 0.78rem; color: var(--color-gold); font-weight: 600;">🔍 Cliquez sur l'image pour la rétrécir et revenir au cours</p>
+    `;
+    modal.style.display = 'flex';
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
 
   function closeModal() {
     modal.classList.remove('open');
+    modal.style.display = 'none';
     document.body.style.overflow = '';
   }
 
-  if (closeBtn) closeBtn.addEventListener('click', closeModal);
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
+  document.addEventListener('click', (e) => {
+    // Si la modale est ouverte : un clic sur l'image agrandie ou n'importe où rétrécit et ferme
+    if (modal.classList.contains('open')) {
+      if (e.target === modalImg || e.target === closeBtn || e.target === modal || e.target.closest('.modal-close-btn') || e.target.closest('.modal-content')) {
+        closeModal();
+        return;
+      }
+    }
+
+    // Détection universelle de clic sur toute image de cours ou document
+    const imgTarget = e.target.closest('img');
+    const boxTarget = e.target.closest('.art-img-box, .doc-box-img-wrap');
+
+    if (imgTarget && !imgTarget.closest('#image-modal') && !imgTarget.closest('.logo') && imgTarget.naturalWidth > 32) {
+      e.preventDefault();
+      openModal(imgTarget);
+    } else if (boxTarget && !boxTarget.closest('#image-modal')) {
+      const img = boxTarget.querySelector('img');
+      if (img) {
+        e.preventDefault();
+        openModal(img);
+      }
+    }
   });
 
   window.addEventListener('keydown', (e) => {
@@ -88,6 +107,7 @@ export function initLightbox() {
     }
   });
 }
+
 
 export function initDocAccordions() {
   document.querySelectorAll('.doc-corrige-toggle').forEach(btn => {

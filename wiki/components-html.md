@@ -10,7 +10,7 @@ Pour respecter l'obligation de **fichiers $\le 200$ lignes**, l'ensemble des pag
 | :--- | :---: | :--- |
 | `navbar.html` | 51 | Barre de navigation supérieure (desktop & mobile), logo, toggle de thème et menu drawer. |
 | `reading-progress.html` | 1 | Élément `#reading-progress` pour la barre de défilement supérieure. |
-| `image-modal.html` | 9 | Fenêtre modale Lightbox pour l'agrandissement plein écran des schémas et images d'art. |
+| `image-modal.html` | 9 | Fenêtre modale Lightbox universelle pour l'agrandissement et le rétrécissement immédiat au clic de toutes les images du site. |
 | `footer.html` | 33 | Pied de page institutionnel conforme aux programmes officiels. |
 
 ---

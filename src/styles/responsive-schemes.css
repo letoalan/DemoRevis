@@ -1,3 +1,7 @@
+/* ==========================================================================
+   RESPONSIVE SCHEMES, KEY IDEAS & ACADEMIC TABLES (Mobile First)
+   ========================================================================== */
+
 @media (max-width: 768px) {
   /* Key Ideas */
   .key-ideas-grid {
@@ -5,12 +9,14 @@
     gap: 1rem;
   }
 
-  .idea-card {
+  .idea-card,
+  .key-idea-card {
     padding: 1.25rem 1rem;
     border-radius: var(--radius-md);
   }
 
-  .idea-card:hover {
+  .idea-card:hover,
+  .key-idea-card:hover {
     transform: none;
   }
 
@@ -20,12 +26,13 @@
   }
 
   .guide-question {
-    font-size: 1.15rem;
+    font-size: 1.12rem;
+    line-height: 1.45;
   }
 
   /* Mermaid Schematics */
   .mermaid-card {
-    padding: 1rem 0.75rem;
+    padding: 0.85rem 0.6rem;
     margin-bottom: 1.75rem;
     border-radius: var(--radius-md);
   }
@@ -36,33 +43,119 @@
     gap: 0.4rem;
   }
 
+  .mermaid-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+    padding: 0.35rem;
+  }
+
+  .mermaid-toolbar button,
+  .btn-zoom-in,
+  .btn-zoom-out,
+  .btn-zoom-reset,
+  .btn-fullscreen {
+    flex: 1 1 calc(25% - 0.35rem);
+    min-height: 40px;
+    padding: 0.35rem 0.45rem;
+    font-size: 0.78rem;
+    justify-content: center;
+    white-space: nowrap;
+  }
+
+  .mermaid-hint {
+    width: 100%;
+    justify-content: center;
+    margin-top: 0.3rem;
+    font-size: 0.74rem;
+    text-align: center;
+  }
+
   .mermaid-box {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    display: block;
-    text-align: left;
-    padding: 0.5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.75rem 0.25rem;
+    min-height: 220px;
   }
 
   .mermaid-box svg {
-    min-width: 560px;
-    height: auto;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
   }
 
-  /* Tables */
+  .mermaid-card.fullscreen-mode {
+    inset: 0 !important;
+    border-radius: 0 !important;
+    padding: 0.75rem 0.5rem !important;
+    z-index: 9999 !important;
+  }
+
+  .mermaid-card.fullscreen-mode .mermaid-box {
+    max-height: calc(100vh - 100px);
+    overflow: auto;
+  }
+
+  /* Academic Tables */
+  .table-responsive,
   .table-wrapper {
     margin-bottom: 1.5rem;
     border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    position: relative;
+    background: var(--bg-card);
   }
 
+  .academic-table,
   .custom-table {
-    min-width: 560px;
+    min-width: 540px;
+    font-size: 0.82rem;
+  }
+
+  .academic-table th,
+  .custom-table th {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+
+  .academic-table td,
+  .custom-table td {
+    padding: 0.65rem 0.75rem;
+    font-size: 0.82rem;
+    min-width: 130px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .guide-question {
+    font-size: 1.02rem;
+    line-height: 1.4;
+  }
+
+  .key-idea-card {
+    padding: 1rem 0.85rem;
+  }
+
+  .key-idea-title {
+    font-size: 0.95rem;
+  }
+
+  .key-idea-text {
     font-size: 0.86rem;
+    line-height: 1.5;
   }
 
-  .custom-table th, .custom-table td {
-    padding: 0.75rem 0.85rem;
+  .mermaid-toolbar button {
+    font-size: 0.74rem;
+    padding: 0.35rem 0.25rem;
   }
-
 }

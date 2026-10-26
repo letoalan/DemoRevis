@@ -16,19 +16,20 @@ export async function initMermaid() {
     theme: currentTheme,
     themeVariables: currentTheme === 'dark' ? {
       fontFamily: 'Plus Jakarta Sans, sans-serif',
-      fontSize: '15px',
+      fontSize: '16px',
       primaryColor: '#1e3a8a',
       primaryTextColor: '#f8fafc',
       primaryBorderColor: '#60a5fa',
       lineColor: '#93c5fd',
       secondaryColor: '#1e293b',
       tertiaryColor: '#131d33',
-      clusterBkg: 'rgba(30, 58, 138, 0.2)',
-      clusterBorder: '#3b82f6',
-      mainBkg: '#1e293b'
+      clusterBkg: 'rgba(30, 58, 138, 0.22)',
+      clusterBorder: '#60a5fa',
+      mainBkg: '#1e293b',
+      titleColor: '#f8fafc'
     } : {
       fontFamily: 'Plus Jakarta Sans, sans-serif',
-      fontSize: '15px',
+      fontSize: '16px',
       primaryColor: '#eff6ff',
       primaryTextColor: '#0f172a',
       primaryBorderColor: '#1d4ed8',
@@ -37,15 +38,16 @@ export async function initMermaid() {
       tertiaryColor: '#ffffff',
       clusterBkg: 'rgba(30, 58, 138, 0.04)',
       clusterBorder: '#93c5fd',
-      mainBkg: '#ffffff'
+      mainBkg: '#ffffff',
+      titleColor: '#0f172a'
     },
     flowchart: {
       useMaxWidth: true,
       htmlLabels: true,
       curve: 'basis',
       padding: 16,
-      nodeSpacing: 45,
-      rankSpacing: 45
+      nodeSpacing: 34,
+      rankSpacing: 38
     }
   });
 
@@ -69,14 +71,22 @@ export function initMermaidToolbars() {
     if (!box) return;
 
     let currentScale = 1.0;
+    const resetBtn = card.querySelector('.btn-zoom-reset');
 
     function setScale(scale) {
-      currentScale = Math.max(0.65, Math.min(2.2, scale));
+      currentScale = Math.max(0.7, Math.min(2.5, Math.round(scale * 100) / 100));
       const svg = box.querySelector('svg');
       if (svg) {
-        svg.style.transform = `scale(${currentScale})`;
-        svg.style.transformOrigin = 'center top';
+        if (currentScale === 1.0) {
+          svg.style.transform = '';
+        } else {
+          svg.style.transform = `scale(${currentScale})`;
+          svg.style.transformOrigin = 'center top';
+        }
         svg.style.transition = 'transform 0.2s cubic-bezier(0.16, 1, 0.3, 1)';
+      }
+      if (resetBtn) {
+        resetBtn.textContent = `↺ ${Math.round(currentScale * 100)}%`;
       }
     }
 
@@ -88,7 +98,7 @@ export function initMermaidToolbars() {
       setScale(currentScale - 0.15);
     });
 
-    card.querySelector('.btn-zoom-reset')?.addEventListener('click', () => {
+    resetBtn?.addEventListener('click', () => {
       setScale(1.0);
     });
 

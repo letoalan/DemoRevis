@@ -18,30 +18,37 @@
 flowchart TD
     EGAL["⚖️ <b>ÉGALISATION DES CONDITIONS & DÉMOCRATIE</b><br/>Avènement de l'égalité civile et du confort moderne"]
 
-    EGAL --> RISQUE
+    EGAL --> INDIV
 
     subgraph RISQUE["LE PÉRIL TOCQUEVILLIEN : DÉPOLITISATION & CONFORMISME"]
-        INDIV["<b>👤 Repli Individualiste</b><br/>Concentration exclusive sur le bien-être privé et abandon du débat civique"]
-        INDIV --> ABST["<b>📉 Abstention & Désintérêt</b><br/>Autonomisation et dérive sans contrôle des dirigeants"]
-        INDIV --> CONF["<b>👥 Tyrannie de la Majorité</b><br/>Conformisme intellectuel étouffant les minorités et le débat critique"]
+        direction TB
+        INDIV["<b>👤 Repli Individualiste</b><br/>Concentration exclusive sur les intérêts privés et retrait du débat public"]
+        CONSEQ["<b>📉 Abstention & 👥 Tyrannie de la Majorité</b><br/>Désintérêt pour la chose publique et conformisme intellectuel étouffant"]
+        INDIV --> CONSEQ
     end
 
-    ABST & CONF --> DANG["🚨 <b>CRISE DU RÉGIME OU AUTODESTRUCTION</b><br/>Démocratie procédurale vulnérable aux tentations autoritaires"]
+    CONSEQ --> DANG["🚨 <b>CRISE DU RÉGIME OU RISQUE DE GLISSEMENT AUTORITAIRE</b><br/>Démocratie procédurale affaiblie face aux crises économiques et sociales"]
 
-    subgraph CRISES["DEUX EFFONDREMENTS HISTORIQUES MAJEURS"]
-        DANG -->|Destruction légale de l'intérieur| WEI["<b>🇩🇪 Allemagne de Weimar (1933)</b><br/>Hitler nommé chancelier ; absence de Cour constitutionnelle protectrice"]
-        DANG -->|Polarisation & coup de force| CHI["<b>🇨🇱 Chili d'Allende (1973)</b><br/>Deux conformismes irréconciliables ; coup d'État du général Pinochet"]
+    DANG --> WEI
+    DANG --> REM
+
+    subgraph CRISES["EFFONDREMENTS HISTORIQUES"]
+        direction TB
+        WEI["<b>🇩🇪 Weimar (1933) :</b> Mort légale de la démocratie de l'intérieur"]
+        CHI["<b>🇨🇱 Chili (1973) :</b> Polarisation extrême & coup d'État militaire"]
+        WEI --> CHI
     end
 
-    subgraph REMEDES["LES CONTRE-POUVOIRS SALVATEURS"]
-        REM["🛡️ <b>MÉCANISMES DE RÉSILIENCE DÉMOCRATIQUE</b><br/>• Justice constitutionnelle forte & contrôle effectif des lois<br/>• Presse d'investigation libre et société civile vigilante<br/>• Loyauté républicaine de l'armée et du chef de l'État"]
-        REM -->|Transitions démocratiques réussies| TRANS["<b>🇵🇹 Portugal (1974) & 🇪🇸 Espagne (1981)</b><br/>Révolution des Œillets & Échec du putsch Tejero le 23-F"]
+    subgraph REMEDES["RÉSILIENCE & CONTRE-POUVOIRS"]
+        direction TB
+        REM["<b>⚖️ Justice constitutionnelle & Presse d'investigation</b><br/>Contrôle effectif des lois et vigilance citoyenne active"]
+        TRANS["<b>🇵🇹 Portugal (1974) & 🇪🇸 Espagne (1981)</b><br/>Transitions démocratiques et loyauté institutionnelle"]
+        REM --> TRANS
     end
 
     style EGAL fill:#1e3a8a,stroke:#3b82f6,stroke-width:2.5px,color:#ffffff
     style INDIV fill:#fef3c7,stroke:#b45309,stroke-width:2px,color:#92400e
-    style ABST fill:#fef3c7,stroke:#b45309,stroke-width:2px,color:#92400e
-    style CONF fill:#fef3c7,stroke:#b45309,stroke-width:2px,color:#92400e
+    style CONSEQ fill:#fef3c7,stroke:#b45309,stroke-width:2px,color:#92400e
     style DANG fill:#fee2e2,stroke:#dc2626,stroke-width:2.5px,color:#991b1b
     style WEI fill:#fecaca,stroke:#b91c1c,stroke-width:2px,color:#7f1d1d
     style CHI fill:#fecaca,stroke:#b91c1c,stroke-width:2px,color:#7f1d1d

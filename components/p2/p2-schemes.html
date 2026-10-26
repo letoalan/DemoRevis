@@ -16,36 +16,35 @@
         <div class="mermaid-box">
           <div class="mermaid">
 flowchart TD
-    MOD["🏛️ <b>DEUX MODÈLES HISTORIQUES DE DÉMOCRATIE</b><br/>L'exercice direct de la souveraineté vs la délégation représentative"]
+    MOD["🏛️ <b>DEUX MODÈLES HISTORIQUES DE DÉMOCRATIE</b><br/>Exercice direct de la souveraineté vs délégation représentative"]
 
-    MOD --> ATH_BOX
-    MOD --> REP_BOX
+    MOD --> ECC
+    MOD --> CIT
 
-    subgraph ATH_BOX["MODÈLE DIRECT ATHÉNIEN (Ve s. av. J.-C.)"]
-        ECC["<b>🏛️ Ecclésia (Pnyx)</b><br/>Assemblée souveraine de tous les citoyens (~40 000)<br/>Vote les lois, la paix et la guerre"]
-        ECC -->|Tirage au sort annuel| BOU["<b>📜 Boulè (Conseil des 500)</b><br/>Prépare les projets de lois (probouleuma)"]
-        ECC -->|Tirage au sort annuel| HEL["<b>⚖️ Héliée (6 000 jurés)</b><br/>Tribunal populaire qui rend la justice de la cité"]
-        ECC -->|Élection au mérite| STR["<b>⚔️ 10 Stratèges rééligibles</b><br/>Commandement militaire et diplomatie"]
-        ECC -->|Vote annuel de défiance| OST["<b>🛡️ Ostracisme</b><br/>Bannissement pour 10 ans contre la tyrannie"]
+    subgraph ATH_BOX["DÉMOCRATIE DIRECTE ATHÉNIENNE (Ve s. av. J.-C.)"]
+        direction TB
+        ECC["<b>🏛️ Ecclésia (Pnyx)</b><br/>Assemblée souveraine des ~40 000 citoyens<br/>Vote direct des lois, de la paix et des traités"]
+        TIR["<b>🎲 Organes Tirés au Sort (Égalité stricte)</b><br/>• <b>Boulè (500) :</b> prépare les décrets & projets de lois<br/>• <b>Héliée (6 000) :</b> tribunal populaire de jurés citoyens"]
+        ELU["<b>⚔️ Magistratures Élus & Contrôle</b><br/>• <b>10 Stratèges :</b> élus au mérite pour l'armée et la cité<br/>• <b>Ostracisme :</b> vote d'exil de 10 ans contre tout tyran"]
+        ECC -->|Tirage au sort annuel| TIR
+        TIR -->|Élection & contrôle annuel| ELU
     end
 
-    subgraph REP_BOX["MODÈLE REPRÉSENTATIF MODERNE (Constant 1819)"]
-        CIT["<b>👥 Corps Civique Universel</b><br/>Citoyens libres, égaux, détenteurs de droits civils inviolables<br/>Jouissance de l'indépendance privée"]
-        CIT -->|Suffrage universel périodique| PARL["<b>🏛️ Représentants Mandatés (Parlement)</b><br/>Députés élus qui délibèrent et votent les lois au nom du peuple"]
-        PARL --> LOI["<b>⚙️ Gouvernement & Lois</b><br/>Exécution des lois sous le contrôle des élus"]
-        CIT -->|Vigilance civique continue| CONTR["<b>🔍 Contre-pouvoirs & Alternance</b><br/>Presse libre, justice indépendante, droit de contestation"]
+    subgraph REP_BOX["DÉMOCRATIE REPRÉSENTATIVE (Constant 1819)"]
+        direction TB
+        CIT["<b>👥 Corps Civique & Libertés Individuelles</b><br/>Citoyens autonomes, égaux et protégés dans leur sphère privée"]
+        PARL["<b>🏛️ Parlement Mandaté (Représentants Élus)</b><br/>Députés délibèrent et votent les lois au nom de la nation"]
+        CONTR["<b>⚙️ Gouvernement & 🔍 Contre-pouvoirs</b><br/>Exécutif soumis au contrôle d'une presse et d'une justice libres"]
+        CIT -->|Suffrage universel périodique| PARL
+        PARL --> CONTR
     end
 
     style MOD fill:#1e3a8a,stroke:#3b82f6,stroke-width:2.5px,color:#ffffff
-    style ECC fill:#eff6ff,stroke:#1d4ed8,stroke-width:2.5px,color:#1e3a8a
-    style BOU fill:#f0fdf4,stroke:#16a34a,stroke-width:2px,color:#14532d
-    style HEL fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#78350f
-    style STR fill:#f5f3ff,stroke:#7c3aed,stroke-width:2px,color:#581c87
-    style OST fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#991b1b
-
-    style CIT fill:#eff6ff,stroke:#1d4ed8,stroke-width:2.5px,color:#1e3a8a
+    style ECC fill:#eff6ff,stroke:#1d4ed8,stroke-width:2px,color:#1e3a8a
+    style TIR fill:#f0fdf4,stroke:#16a34a,stroke-width:2px,color:#14532d
+    style ELU fill:#f5f3ff,stroke:#7c3aed,stroke-width:2px,color:#581c87
+    style CIT fill:#eff6ff,stroke:#1d4ed8,stroke-width:2px,color:#1e3a8a
     style PARL fill:#f0fdf4,stroke:#16a34a,stroke-width:2px,color:#14532d
-    style LOI fill:#f5f3ff,stroke:#7c3aed,stroke-width:2px,color:#581c87
     style CONTR fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#78350f
           </div>
         </div>

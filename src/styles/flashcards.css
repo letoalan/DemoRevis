@@ -126,3 +126,41 @@
   min-width: 80px;
   text-align: center;
 }
+
+@media (max-width: 640px) {
+  .flashcards-station {
+    padding: 1.25rem 0.85rem;
+    margin: 1.75rem 0;
+  }
+  .flashcard-wrapper {
+    height: 250px;
+    margin: 1rem auto;
+  }
+  .flashcard-face {
+    padding: 1.25rem 1rem;
+  }
+  .flashcard-hint {
+    font-size: 0.72rem;
+    margin-bottom: 0.5rem;
+  }
+  .flashcard-term {
+    font-size: 1.25rem;
+    line-height: 1.35;
+  }
+  .flashcard-def {
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+  .flashcard-subhint {
+    margin-top: 0.85rem;
+    font-size: 0.75rem;
+  }
+  .flashcards-controls {
+    gap: 0.5rem;
+  }
+  .flashcard-btn {
+    padding: 0.55rem 0.85rem;
+    font-size: 0.82rem;
+    min-height: 42px;
+  }
+}

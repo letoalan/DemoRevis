@@ -1,7 +1,6 @@
 /* ==========================================================================
-   SITE FOOTER (Academic Premium Theme)
+   SITE FOOTER (Academic Premium Theme & Mobile Responsive)
    ========================================================================== */
-
 .site-footer {
   position: relative;
   margin-top: 5rem;
@@ -54,7 +53,8 @@
 }
 
 .footer-brand-title .brand-badge {
-  width: 38px; height: 38px;
+  width: 38px;
+  height: 38px;
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
@@ -151,7 +151,6 @@
   color: var(--color-primary);
   transform: translateX(4px);
 }
-
 .footer-link-item a:hover::before {
   opacity: 1;
   transform: translateX(2px);
@@ -206,6 +205,9 @@
 }
 
 @media (max-width: 600px) {
-  .footer-grid { grid-template-columns: 1fr; gap: 1.75rem; }
-  .footer-bottom-bar { flex-direction: column; align-items: flex-start; }
+  .site-footer { margin-top: 3.5rem; }
+  .footer-container { padding: 2.25rem 1rem 1.5rem; }
+  .footer-grid { grid-template-columns: 1fr; gap: 1.75rem; margin-bottom: 2rem; }
+  .footer-bottom-bar { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .btn-scroll-top { width: 100%; justify-content: center; min-height: 44px; }
 }

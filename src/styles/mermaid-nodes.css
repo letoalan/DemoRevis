@@ -12,15 +12,22 @@
 .mermaid .node .nodeLabel,
 .mermaid .node text {
   font-family: var(--font-sans) !important;
-  font-size: 14.5px !important;
+  font-size: 15.5px !important;
   line-height: 1.55 !important;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
+}
+
+.mermaid .node b,
+.mermaid .node strong {
+  font-weight: 800 !important;
+  font-size: 16px !important;
+  letter-spacing: -0.01em !important;
 }
 
 .mermaid .node:hover rect,
 .mermaid .node:hover polygon,
 .mermaid .node:hover circle {
-  filter: brightness(1.04) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.15));
+  filter: brightness(1.05) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
   cursor: pointer;
 }
 
@@ -125,30 +132,48 @@
 .mermaid .cluster rect {
   fill: var(--bg-elevated) !important;
   stroke: var(--border-highlight) !important;
-  stroke-width: 1.5px !important;
-  stroke-dasharray: 4, 4 !important;
-  rx: 14px !important;
-  ry: 14px !important;
+  stroke-width: 2px !important;
+  stroke-dasharray: 6, 6 !important;
+  rx: 16px !important;
+  ry: 16px !important;
 }
 
 .mermaid .cluster text {
   font-family: var(--font-heading) !important;
-  font-weight: 700 !important;
+  font-weight: 800 !important;
   fill: var(--text-main) !important;
-  font-size: 13px !important;
+  font-size: 13.5px !important;
+  letter-spacing: 0.03em !important;
 }
 
 /* Edge Connectors */
 .mermaid .edgePath path {
-  stroke: var(--color-primary-light) !important;
-  stroke-width: 2px !important;
+  stroke: var(--color-primary) !important;
+  stroke-width: 2.5px !important;
 }
 
 .mermaid .edgeLabel {
   background-color: var(--bg-card) !important;
-  color: var(--text-muted) !important;
+  color: var(--text-main) !important;
   border-radius: var(--radius-sm);
-  font-size: 0.78rem !important;
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
   border: 1px solid var(--border-color);
-  padding: 2px 6px;
+  padding: 3px 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
+
+[data-theme='dark'] .mermaid .cluster text {
+  fill: #f8fafc !important;
+}
+
+[data-theme='dark'] .mermaid .edgeLabel {
+  background-color: #1e293b !important;
+  color: #f1f5f9 !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+[data-theme='dark'] .mermaid .edgePath path {
+  stroke: #60a5fa !important;
+}
+

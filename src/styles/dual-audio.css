@@ -1,0 +1,42 @@
+/* ==========================================================================
+   DEMOREVIS EXTENSIONS : DUAL AUDIO, FLASHCARDS, ANALYSE STUDIO
+   ========================================================================== */
+
+/* Dual Audio Switcher */
+.audio-mode-selector {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  background: var(--bg-elevated);
+  padding: 0.35rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+.audio-mode-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.audio-mode-btn:hover {
+  color: var(--text-main);
+  background: rgba(0, 0, 0, 0.04);
+}
+[data-theme="dark"] .audio-mode-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+.audio-mode-btn.active {
+  background: var(--color-primary);
+  color: #ffffff !important;
+  box-shadow: var(--shadow-sm);
+}

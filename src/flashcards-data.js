@@ -168,3 +168,6 @@ export const flashcards = {
     }
   ]
 };
+
+flashcards.concl = flashcards.conclusion;
+flashcards.p4 = flashcards.conclusion;

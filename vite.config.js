@@ -1,8 +1,37 @@
 import { defineConfig } from 'vite';
-import { resolve } from 'path';
+import { resolve, dirname } from 'path';
+import fs from 'fs';
+
+function htmlIncludePlugin() {
+  return {
+    name: 'vite-plugin-html-include',
+    transformIndexHtml: {
+      order: 'pre',
+      handler(html, { filename }) {
+        const fileDir = dirname(filename);
+        const includeRegex = /<include\s+src=["']([^"']+)["']\s*(?:\/>|><\/include>)/g;
+
+        function replaceIncludes(content, currentDir) {
+          return content.replace(includeRegex, (_, src) => {
+            const filePath = resolve(currentDir, src);
+            if (fs.existsSync(filePath)) {
+              const fileContent = fs.readFileSync(filePath, 'utf8');
+              return replaceIncludes(fileContent, dirname(filePath));
+            }
+            console.warn(`[html-include] Missing include file: ${filePath}`);
+            return '';
+          });
+        }
+
+        return replaceIncludes(html, fileDir);
+      }
+    }
+  };
+}
 
 export default defineConfig(({ mode }) => ({
   base: mode === 'production' ? '/DemoRevis/' : '/',
+  plugins: [htmlIncludePlugin()],
   build: {
     rollupOptions: {
       input: {

@@ -1,0 +1,133 @@
+/* Guided Form Panel */
+.analyse-form-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+}
+.form-step-block {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1.75rem;
+}
+.form-step-block:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.step-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.step-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+.field-group {
+  margin-bottom: 1.25rem;
+}
+.field-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 0.4rem;
+}
+.field-hint {
+  font-size: 0.8rem;
+  color: var(--text-subtle);
+  margin-bottom: 0.5rem;
+}
+.analyse-textarea {
+  width: 100%;
+  min-height: 85px;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: var(--bg-elevated);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  resize: vertical;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+.analyse-textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-soft);
+}
+.analyse-actions-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--border-color);
+  flex-wrap: wrap;
+}
+
+/* Save status tag */
+.save-status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--color-success);
+  font-weight: 600;
+}
+.save-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-success);
+  display: inline-block;
+}
+
+/* Print Stylesheet for Analysis Paper */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt !important;
+  }
+  .header-nav, .mobile-nav, #reading-progress, .nav-controls, .theme-btn, .analyse-actions-bar, .doc-help-toggle, .btn-tirage, .site-footer, .analyse-toolbar, .subject-selector-bar {
+    display: none !important;
+  }
+  .analyse-container {
+    display: block !important;
+  }
+  .analyse-docs-panel {
+    position: static !important;
+    max-height: none !important;
+    overflow: visible !important;
+    page-break-after: always;
+  }
+  .analyse-form-panel {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+  .analyse-textarea {
+    border: 1px solid #ccc !important;
+    background: #fff !important;
+    color: #000 !important;
+    resize: none !important;
+    overflow: visible !important;
+    min-height: auto !important;
+  }
+  .doc-box {
+    border: 1px solid #999 !important;
+    page-break-inside: avoid;
+    margin-bottom: 1.5rem !important;
+  }
+}

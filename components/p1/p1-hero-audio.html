@@ -1,0 +1,85 @@
+    <!-- Hero Banner -->
+    <section class="page-hero">
+      <div class="hero-meta">
+        <span class="period-badge">Thème 1 • Introduction</span>
+        <span class="level-tag">Notions Fondamentales</span>
+        <span class="level-tag">Durée estimée : 45 min</span>
+      </div>
+      <h1 class="page-title">Qu'est-ce que la démocratie ? Fondements, typologie et fragilités</h1>
+      <p class="page-lead">
+        Issu du grec <em>dêmos</em> (le peuple) et <em>kratos</em> (le pouvoir), le mot « démocratie » désigne le gouvernement du peuple, par le peuple et pour le peuple. Pourtant, ce terme est revendiqué par des régimes radicalement opposés : des démocraties libérales occidentales aux régimes autoritaires et « démocraties populaires ». Quels sont les critères tangibles qui définissent une véritable démocratie ?
+      </p>
+    </section>
+
+    <!-- Station Audio Dual Track -->
+    <section class="audio-station" 
+      data-briefing-src="assets/mp3/p1-briefing.mp3" 
+      data-podcast-src="assets/mp3/p1-podcast.mp3">
+      <div class="audio-head">
+        <div>
+          <span class="audio-pill">Audio Station</span>
+          <h2 class="audio-title">Écouter la leçon : Briefing express ou Podcast complet</h2>
+        </div>
+        <div style="font-size: 0.85rem; color: var(--text-subtle);">Qualité sonore optimisée</div>
+      </div>
+
+      <!-- Sélecteur de piste -->
+      <div class="audio-mode-selector" role="tablist">
+        <button type="button" class="audio-mode-btn active" data-track="briefing" role="tab" aria-selected="true">
+          ⚡ Briefing de révision express (1 min 30)
+        </button>
+        <button type="button" class="audio-mode-btn" data-track="podcast" role="tab" aria-selected="false">
+          🎙️ Podcast de cours approfondi (17 min)
+        </button>
+      </div>
+
+      <audio preload="metadata"></audio>
+
+      <!-- Contrôles du lecteur -->
+      <div class="audio-controls">
+        <button type="button" class="play-toggle-btn" aria-label="Écouter">▶</button>
+        <div class="progress-bar-container" title="Cliquer pour naviguer dans l'audio">
+          <div class="progress-bar-fill"></div>
+        </div>
+        <div class="time-display">
+          <span class="current-time">00:00</span> / <span class="duration-time">--:--</span>
+        </div>
+        <button type="button" class="speed-toggle-btn" aria-label="Vitesse de lecture 1 fois">1×</button>
+      </div>
+
+      <!-- Transcription repliable -->
+      <div class="transcription-container">
+        <button type="button" class="transcription-toggle" aria-expanded="false">
+          <span>📜 Lire la transcription textuelle</span>
+          <span class="toggle-icon">▼</span>
+        </button>
+
+        <div class="transcription-body" id="transcript-briefing">
+          <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--color-primary);">
+            Résumé synthétique du Briefing
+          </h4>
+          <p>
+            Bienvenue dans ce briefing d'introduction. La démocratie repose sur un principe fondateur : le pouvoir émane des citoyens. Cependant, tous les régimes qui se prétendent démocratiques ne le sont pas dans les faits. Pour qu'une démocratie soit qualifiée de libérale, plusieurs conditions cumulatives sont indispensables :
+          </p>
+          <ul style="margin: 0.75rem 0 0.75rem 1.5rem; line-height: 1.6;">
+            <li><strong>Des élections libres, pluralistes et régulières :</strong> le vote doit permettre une véritable alternance politique sans intimidation.</li>
+            <li><strong>La séparation des pouvoirs :</strong> distinction impérative de l'exécutif, du législatif et du judiciaire pour éviter la tyrannie.</li>
+            <li><strong>L'État de droit :</strong> la primauté de la Constitution et des lois, où les gouvernants sont soumis aux mêmes règles que les citoyens.</li>
+            <li><strong>La garantie des libertés fondamentales :</strong> liberté d'expression, liberté de la presse, liberté de réunion et respect des minorités.</li>
+          </ul>
+        </div>
+
+        <div class="transcription-body" id="transcript-podcast" style="display: none;">
+          <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--color-primary);">
+            Transcription intégrale du Podcast de cours
+          </h4>
+          <p>
+            Dans ce cours approfondi, nous interrogeons les origines et la polysémie du terme démocratie. Si l'article 21 de la Déclaration universelle des droits de l'homme de 1948 proclame que <em>« la volonté du peuple est le fondement de l'autorité des pouvoirs publics »</em>, l'application concrète varie profondément selon les époques et les idéologies.
+          </p>
+          <p style="margin-top: 0.5rem;">
+            Nous distinguons d'abord les régimes autoritaires, où le pouvoir est accaparé par un individu ou une oligarchie sans possibilité de contestation légale, et les totalitarismes du XXe siècle, qui ont usurpé l'appellation de « démocraties populaires » pour masquer la terreur d'État et le parti unique. À l'inverse, la démocratie libérale moderne articule la légitimité du nombre (suffrage) avec la protection inviolable des droits individuels. Enfin, le concept contemporain de « démocratie illibérale », incarné par certains gouvernements actuels, montre le danger de régimes qui conservent la façade des élections mais attaquent l'indépendance de la justice et de la presse.
+          </p>
+        </div>
+      </div>
+    </section>
+

@@ -1,0 +1,54 @@
+    <!-- Schéma Heuristique Mermaid -->
+    <section class="study-section">
+      <div class="section-head">
+        <h2 class="section-title"><span>🧩</span> Schéma Heuristique : Le Cycle Tocquevillien et les Contre-pouvoirs</h2>
+        <span class="section-pill">Mécanisme théorique</span>
+      </div>
+
+      <div class="mermaid-card">
+        <div class="mermaid-toolbar">
+          <button type="button" class="btn-zoom-in" title="Zoom avant">🔍 Zoom +</button>
+          <button type="button" class="btn-zoom-out" title="Zoom arrière">🔍 Dézoom −</button>
+          <button type="button" class="btn-zoom-reset" title="Réinitialiser l'affichage">↺ 100%</button>
+          <button type="button" class="btn-fullscreen" title="Mode plein écran">⛶ Plein écran</button>
+          <span class="mermaid-hint">💡 Glissez avec la souris pour naviguer dans le schéma</span>
+        </div>
+        <div class="mermaid-box">
+          <div class="mermaid">
+flowchart TD
+    EGAL["⚖️ <b>ÉGALISATION DES CONDITIONS & DÉMOCRATIE</b><br/>Avènement de l'égalité civile et du confort moderne"]
+
+    EGAL --> RISQUE
+
+    subgraph RISQUE["LE PÉRIL TOCQUEVILLIEN : DÉPOLITISATION & CONFORMISME"]
+        INDIV["<b>👤 Repli Individualiste</b><br/>Concentration exclusive sur le bien-être privé et abandon du débat civique"]
+        INDIV --> ABST["<b>📉 Abstention & Désintérêt</b><br/>Autonomisation et dérive sans contrôle des dirigeants"]
+        INDIV --> CONF["<b>👥 Tyrannie de la Majorité</b><br/>Conformisme intellectuel étouffant les minorités et le débat critique"]
+    end
+
+    ABST & CONF --> DANG["🚨 <b>CRISE DU RÉGIME OU AUTODESTRUCTION</b><br/>Démocratie procédurale vulnérable aux tentations autoritaires"]
+
+    subgraph CRISES["DEUX EFFONDREMENTS HISTORIQUES MAJEURS"]
+        DANG -->|Destruction légale de l'intérieur| WEI["<b>🇩🇪 Allemagne de Weimar (1933)</b><br/>Hitler nommé chancelier ; absence de Cour constitutionnelle protectrice"]
+        DANG -->|Polarisation & coup de force| CHI["<b>🇨🇱 Chili d'Allende (1973)</b><br/>Deux conformismes irréconciliables ; coup d'État du général Pinochet"]
+    end
+
+    subgraph REMEDES["LES CONTRE-POUVOIRS SALVATEURS"]
+        REM["🛡️ <b>MÉCANISMES DE RÉSILIENCE DÉMOCRATIQUE</b><br/>• Justice constitutionnelle forte & contrôle effectif des lois<br/>• Presse d'investigation libre et société civile vigilante<br/>• Loyauté républicaine de l'armée et du chef de l'État"]
+        REM -->|Transitions démocratiques réussies| TRANS["<b>🇵🇹 Portugal (1974) & 🇪🇸 Espagne (1981)</b><br/>Révolution des Œillets & Échec du putsch Tejero le 23-F"]
+    end
+
+    style EGAL fill:#1e3a8a,stroke:#3b82f6,stroke-width:2.5px,color:#ffffff
+    style INDIV fill:#fef3c7,stroke:#b45309,stroke-width:2px,color:#92400e
+    style ABST fill:#fef3c7,stroke:#b45309,stroke-width:2px,color:#92400e
+    style CONF fill:#fef3c7,stroke:#b45309,stroke-width:2px,color:#92400e
+    style DANG fill:#fee2e2,stroke:#dc2626,stroke-width:2.5px,color:#991b1b
+    style WEI fill:#fecaca,stroke:#b91c1c,stroke-width:2px,color:#7f1d1d
+    style CHI fill:#fecaca,stroke:#b91c1c,stroke-width:2px,color:#7f1d1d
+    style REM fill:#ecfdf5,stroke:#059669,stroke-width:2px,color:#065f46
+    style TRANS fill:#f0fdf4,stroke:#16a34a,stroke-width:2px,color:#14532d
+          </div>
+        </div>
+      </div>
+    </section>
+

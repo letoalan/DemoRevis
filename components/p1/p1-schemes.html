@@ -1,0 +1,46 @@
+    <!-- Schéma Heuristique Mermaid -->
+    <section class="study-section">
+      <div class="section-head">
+        <h2 class="section-title"><span>🧩</span> Schéma Heuristique : Typologie des Régimes Politiques</h2>
+        <span class="section-pill">Visualisation conceptuelle</span>
+      </div>
+
+      <div class="mermaid-card">
+        <div class="mermaid-toolbar">
+          <button type="button" class="btn-zoom-in" title="Zoom avant">🔍 Zoom +</button>
+          <button type="button" class="btn-zoom-out" title="Zoom arrière">🔍 Dézoom −</button>
+          <button type="button" class="btn-zoom-reset" title="Réinitialiser l'affichage">↺ 100%</button>
+          <button type="button" class="btn-fullscreen" title="Mode plein écran">⛶ Plein écran</button>
+          <span class="mermaid-hint">💡 Glissez avec la souris pour naviguer dans le schéma</span>
+        </div>
+        <div class="mermaid-box">
+          <div class="mermaid">
+flowchart TD
+    REG["🏛️ <b>RÉGIMES POLITIQUES CONTEMPORAINS</b><br/>Classification selon l'origine, l'exercice et la limitation du pouvoir"]
+
+    REG --> DEM["🗳️ <b>RÉGIMES DÉMOCRATIQUES</b><br/>Souveraineté populaire & État de droit"]
+    REG --> NON_DEM["⛔ <b>RÉGIMES NON DÉMOCRATIQUES</b><br/>Accaparement du pouvoir & absence d'alternance"]
+
+    subgraph DEM_SUB["MODÈLES DÉMOCRATIQUES"]
+        DEM --> DL["<b>🏛️ Démocratie Libérale</b><br/><br/>• Élections libres, transparentes et régulières<br/>• Séparation stricte des 3 pouvoirs<br/>• Justice indépendante & contre-pouvoirs actifs<br/>• Protection constitutionnelle des libertés"]
+        DEM --> DIL["<b>⚠️ Démocratie Illibérale</b><br/><br/>• Élections maintenues mais compétition faussée<br/>• Domination de la majorité sans contre-pouvoirs<br/>• Tribunaux et presse sous tutelle du pouvoir<br/>• Droits des oppositions restreints"]
+    end
+
+    subgraph AUT_SUB["MODÈLES AUTORITAIRES & TOTALITAIRES"]
+        NON_DEM --> AU["<b>🛑 Régime Autoritaire</b><br/><br/>• Concentration du pouvoir (clan, armée ou chef)<br/>• Absence d'alternance politique démocratique<br/>• Pluralisme et opposition muselés ou interdits<br/>• Justice et médias subordonnés à l'exécutif"]
+        NON_DEM --> TOT["<b>☠️ Régime Totalitaire</b><br/><br/>• Parti unique & idéologie officielle exclusive<br/>• Terreur policière et surveillance de masse<br/>• Destruction intégrale de la société civile<br/>• Façade trompeuse de « démocratie populaire »"]
+    end
+
+    style REG fill:#1e3a8a,stroke:#3b82f6,stroke-width:2.5px,color:#ffffff
+    style DEM fill:#dbeafe,stroke:#1d4ed8,stroke-width:2.5px,color:#1e3a8a
+    style NON_DEM fill:#fee2e2,stroke:#dc2626,stroke-width:2.5px,color:#991b1b
+
+    style DL fill:#eff6ff,stroke:#1d4ed8,stroke-width:2.5px,color:#1e3a8a
+    style DIL fill:#fef3c7,stroke:#b45309,stroke-width:2.5px,color:#92400e
+    style AU fill:#fee2e2,stroke:#dc2626,stroke-width:2.5px,color:#991b1b
+    style TOT fill:#fecaca,stroke:#b91c1c,stroke-width:2.5px,color:#7f1d1d
+          </div>
+        </div>
+      </div>
+    </section>
+

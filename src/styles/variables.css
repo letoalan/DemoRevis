@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --font-heading: 'Cinzel', serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  /* Color Palette - Revolutionary Academic Theme (Light mode default) */
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-card-glass: rgba(255, 255, 255, 0.85);
+  --bg-elevated: #f1f5f9;
+  --border-color: #e2e8f0;
+  --border-highlight: #cbd5e1;
+
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-subtle: #64748b;
+
+  --color-primary: #1e3a8a; /* Deep French Royal Blue */
+  --color-primary-light: #3b82f6;
+  --color-primary-soft: #eff6ff;
+
+  --color-accent: #b91c1c; /* Revolutionary Crimson */
+  --color-accent-soft: #fef2f2;
+
+  --color-gold: #b45309; /* Imperial Gold */
+  --color-gold-soft: #fef3c7;
+  --color-gold-glow: rgba(180, 83, 9, 0.2);
+
+  --color-success: #15803d;
+  --color-success-soft: #f0fdf4;
+  --color-danger: #b91c1c;
+  --color-danger-soft: #fef2f2;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+  --shadow-glow: 0 0 25px rgba(30, 58, 138, 0.15);
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme='dark'] {
+  --bg-main: #0b1120;
+  --bg-card: #131d33;
+  --bg-card-glass: rgba(19, 29, 51, 0.85);
+  --bg-elevated: #1e293b;
+  --border-color: #1e293b;
+  --border-highlight: #334155;
+
+  --text-main: #f8fafc;
+  --text-muted: #cbd5e1;
+  --text-subtle: #94a3b8;
+
+  --color-primary: #60a5fa;
+  --color-primary-light: #93c5fd;
+  --color-primary-soft: rgba(96, 165, 250, 0.12);
+
+  --color-accent: #f87171;
+  --color-accent-soft: rgba(248, 113, 113, 0.12);
+
+  --color-gold: #fbbf24;
+  --color-gold-soft: rgba(251, 191, 36, 0.12);
+  --color-gold-glow: rgba(251, 191, 36, 0.25);
+
+  --color-success: #4ade80;
+  --color-success-soft: rgba(74, 222, 128, 0.12);
+  --color-danger: #f87171;
+  --color-danger-soft: rgba(248, 113, 113, 0.12);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 30px rgba(96, 165, 250, 0.2);
+}

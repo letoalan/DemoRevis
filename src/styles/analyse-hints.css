@@ -1,0 +1,83 @@
+/* Progressive Hint Scaffolding (3 levels) */
+.hints-scaffolding {
+  margin-top: 0.4rem;
+  margin-bottom: 0.85rem;
+}
+.hints-buttons-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.35rem;
+}
+.hints-prompt-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-right: 0.35rem;
+}
+.hint-step-btn {
+  font-size: 0.76rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-main);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.hint-step-btn:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+.hint-step-btn.active {
+  background: var(--color-primary);
+  color: #ffffff !important;
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+.hint-step-btn:disabled {
+  opacity: 0.42;
+  cursor: not-allowed;
+  background: var(--bg-elevated);
+  border-color: var(--border-color);
+  color: var(--text-subtle);
+  filter: grayscale(1);
+}
+.hint-display-box {
+  background: var(--bg-elevated);
+  border-left: 3px solid var(--color-gold);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 0.75rem 1rem;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--text-main);
+  margin-top: 0.4rem;
+  animation: fadeInHint 0.25s ease-out;
+}
+.hint-display-title {
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.hint-display-title.level-1 { color: #2563eb; }
+.hint-display-title.level-2 { color: #d97706; }
+.hint-display-title.level-3 { color: #16a34a; }
+[data-theme="dark"] .hint-display-title.level-1 { color: #60a5fa; }
+[data-theme="dark"] .hint-display-title.level-2 { color: #fbbf24; }
+[data-theme="dark"] .hint-display-title.level-3 { color: #4ade80; }
+
+@keyframes fadeInHint {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}

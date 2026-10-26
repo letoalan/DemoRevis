@@ -1,0 +1,82 @@
+    <!-- Hero Banner -->
+    <section class="page-hero">
+      <div class="hero-meta">
+        <span class="period-badge">Thème 1 • Axe 1</span>
+        <span class="level-tag">Athènes antique (Ve s. av. J.-C.) — Époque moderne (1819)</span>
+        <span class="level-tag">Durée estimée : 50 min</span>
+      </div>
+      <h1 class="page-title">Penser la démocratie : démocratie directe et démocratie représentative</h1>
+      <p class="page-lead">
+        La démocratie est née à Athènes sous une forme directe inédite, où chaque citoyen participait personnellement à la confection des lois et au gouvernement de la cité. Redécouverte et réinventée à l'époque des révolutions atlantiques, elle prend la forme du système représentatif. Comment Benjamin Constant a-t-il pensé cette rupture entre la « liberté des Anciens » et la « liberté des Modernes » ?
+      </p>
+    </section>
+
+    <!-- Dual Audio Station -->
+    <section class="audio-station" 
+      data-briefing-src="assets/mp3/p2-briefing.mp3" 
+      data-podcast-src="assets/mp3/p2-podcast.mp3">
+      <div class="audio-head">
+        <div>
+          <span class="audio-pill">Audio Station Axe 1</span>
+          <h2 class="audio-title">Écouter la leçon : Briefing express ou Podcast complet</h2>
+        </div>
+        <div style="font-size: 0.85rem; color: var(--text-subtle);">2 pistes sonores disponibles</div>
+      </div>
+
+      <div class="audio-mode-selector" role="tablist">
+        <button type="button" class="audio-mode-btn active" data-track="briefing" role="tab" aria-selected="true">
+          ⚡ Briefing de synthèse (1 min 30)
+        </button>
+        <button type="button" class="audio-mode-btn" data-track="podcast" role="tab" aria-selected="false">
+          🎙️ Podcast de cours approfondi (20 min)
+        </button>
+      </div>
+
+      <audio preload="metadata"></audio>
+
+      <div class="audio-controls">
+        <button type="button" class="play-toggle-btn" aria-label="Écouter">▶</button>
+        <div class="progress-bar-container" title="Cliquer pour naviguer dans l'audio">
+          <div class="progress-bar-fill"></div>
+        </div>
+        <div class="time-display">
+          <span class="current-time">00:00</span> / <span class="duration-time">--:--</span>
+        </div>
+        <button type="button" class="speed-toggle-btn" aria-label="Vitesse de lecture 1 fois">1×</button>
+      </div>
+
+      <!-- Transcription -->
+      <div class="transcription-container">
+        <button type="button" class="transcription-toggle" aria-expanded="false">
+          <span>📜 Lire la transcription textuelle</span>
+          <span class="toggle-icon">▼</span>
+        </button>
+
+        <div class="transcription-body" id="transcript-briefing">
+          <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--color-primary);">
+            Points clés du Briefing Axe 1
+          </h4>
+          <p>
+            Dans cet axe 1, nous confrontons deux visions de l'idéal démocratique :
+          </p>
+          <ul style="margin: 0.75rem 0 0.75rem 1.5rem; line-height: 1.6;">
+            <li><strong>Le modèle athénien :</strong> démocratie directe où l'Ecclésia vote les lois et la guerre. Pour assurer l'égalité absolue (l'isonomie), la plupart des magistrats et des juges (Héliée) sont tirés au sort. Seuls les stratèges militaires sont élus. Cependant, ce modèle exclut 85 % de la population (femmes, métèques, esclaves).</li>
+            <li><strong>La critique philosophique :</strong> Platon et Aristote dénoncent le risque de démagogie et d'incompétence du peuple souverain.</li>
+            <li><strong>La réponse libérale de Benjamin Constant (1819) :</strong> dans les grands États modernes, le commerce et l'étendue géographique rendent impossible la démocratie directe. La liberté des Modernes consiste à jouir en paix de ses droits individuels et privés. Le peuple délègue le pouvoir par « procuration » à des représentants élus (les mandataires), tout en conservant une vigilance stricte.</li>
+          </ul>
+        </div>
+
+        <div class="transcription-body" id="transcript-podcast" style="display: none;">
+          <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--color-primary);">
+            Transcription intégrale du Podcast de cours
+          </h4>
+          <p>
+            Au Ve siècle avant J.-C., Athènes invente un régime sans précédent. Réunis sur la colline de la Pnyx, les citoyens débattent et votent à main levée. Le tirage au sort y est considéré comme l'instrument démocratique par excellence, car il ne favorise ni la richesse, ni l'éloquence aristocratique. Périclès met en place le <em>misthos</em> (indemnité financière) afin que les citoyens pauvres puissent siéger sans perdre leur gagne-pain.
+          </p>
+          <p style="margin-top: 0.5rem;">
+            Lorsque la Révolution française éclate, les Jacobins de 1793 cherchent à ressusciter cette vertu civique antique. Mais cette tentative débouche sur la Terreur. C'est cette tragédie que Benjamin Constant analyse lors de sa célèbre conférence de 1819. Pour Constant, vouloir imposer aux hommes modernes la liberté des Anciens — qui exigeait le sacrifice permanent de la vie privée à la politique — conduit inévitablement au despotisme. La démocratie représentative moderne n'est pas un substitut dégradé de la démocratie directe : c'est un système émancipateur adapté à une société de liberté individuelle et de division du travail.
+          </p>
+        </div>
+      </div>
+    </section>
+

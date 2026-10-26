@@ -9,7 +9,8 @@ export function initFlashcards(category = 'intro', containerSelector = '#flashca
   const container = document.querySelector(containerSelector);
   if (!container) return;
 
-  const deckData = flashcards[category] || [];
+  const normalizedKey = (category === 'concl' || category === 'p4') ? 'conclusion' : category;
+  const deckData = flashcards[normalizedKey] || flashcards[category] || [];
   if (!deckData.length) return;
 
   let currentDeck = [...deckData];

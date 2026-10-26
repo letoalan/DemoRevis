@@ -1,0 +1,54 @@
+    <!-- Schéma Heuristique Mermaid -->
+    <section class="study-section">
+      <div class="section-head">
+        <h2 class="section-title"><span>🧩</span> Schéma Heuristique : Directe vs Représentative</h2>
+        <span class="section-pill">Schéma heuristique</span>
+      </div>
+
+      <div class="mermaid-card">
+        <div class="mermaid-toolbar">
+          <button type="button" class="btn-zoom-in" title="Zoom avant">🔍 Zoom +</button>
+          <button type="button" class="btn-zoom-out" title="Zoom arrière">🔍 Dézoom −</button>
+          <button type="button" class="btn-zoom-reset" title="Réinitialiser l'affichage">↺ 100%</button>
+          <button type="button" class="btn-fullscreen" title="Mode plein écran">⛶ Plein écran</button>
+          <span class="mermaid-hint">💡 Glissez avec la souris pour naviguer dans le schéma</span>
+        </div>
+        <div class="mermaid-box">
+          <div class="mermaid">
+flowchart TD
+    MOD["🏛️ <b>DEUX MODÈLES HISTORIQUES DE DÉMOCRATIE</b><br/>L'exercice direct de la souveraineté vs la délégation représentative"]
+
+    MOD --> ATH_BOX
+    MOD --> REP_BOX
+
+    subgraph ATH_BOX["MODÈLE DIRECT ATHÉNIEN (Ve s. av. J.-C.)"]
+        ECC["<b>🏛️ Ecclésia (Pnyx)</b><br/>Assemblée souveraine de tous les citoyens (~40 000)<br/>Vote les lois, la paix et la guerre"]
+        ECC -->|Tirage au sort annuel| BOU["<b>📜 Boulè (Conseil des 500)</b><br/>Prépare les projets de lois (probouleuma)"]
+        ECC -->|Tirage au sort annuel| HEL["<b>⚖️ Héliée (6 000 jurés)</b><br/>Tribunal populaire qui rend la justice de la cité"]
+        ECC -->|Élection au mérite| STR["<b>⚔️ 10 Stratèges rééligibles</b><br/>Commandement militaire et diplomatie"]
+        ECC -->|Vote annuel de défiance| OST["<b>🛡️ Ostracisme</b><br/>Bannissement pour 10 ans contre la tyrannie"]
+    end
+
+    subgraph REP_BOX["MODÈLE REPRÉSENTATIF MODERNE (Constant 1819)"]
+        CIT["<b>👥 Corps Civique Universel</b><br/>Citoyens libres, égaux, détenteurs de droits civils inviolables<br/>Jouissance de l'indépendance privée"]
+        CIT -->|Suffrage universel périodique| PARL["<b>🏛️ Représentants Mandatés (Parlement)</b><br/>Députés élus qui délibèrent et votent les lois au nom du peuple"]
+        PARL --> LOI["<b>⚙️ Gouvernement & Lois</b><br/>Exécution des lois sous le contrôle des élus"]
+        CIT -->|Vigilance civique continue| CONTR["<b>🔍 Contre-pouvoirs & Alternance</b><br/>Presse libre, justice indépendante, droit de contestation"]
+    end
+
+    style MOD fill:#1e3a8a,stroke:#3b82f6,stroke-width:2.5px,color:#ffffff
+    style ECC fill:#eff6ff,stroke:#1d4ed8,stroke-width:2.5px,color:#1e3a8a
+    style BOU fill:#f0fdf4,stroke:#16a34a,stroke-width:2px,color:#14532d
+    style HEL fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#78350f
+    style STR fill:#f5f3ff,stroke:#7c3aed,stroke-width:2px,color:#581c87
+    style OST fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#991b1b
+
+    style CIT fill:#eff6ff,stroke:#1d4ed8,stroke-width:2.5px,color:#1e3a8a
+    style PARL fill:#f0fdf4,stroke:#16a34a,stroke-width:2px,color:#14532d
+    style LOI fill:#f5f3ff,stroke:#7c3aed,stroke-width:2px,color:#581c87
+    style CONTR fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#78350f
+          </div>
+        </div>
+      </div>
+    </section>
+

@@ -1,0 +1,154 @@
+/* Mermaid SVG Node Styling Harmonization */
+.mermaid .node rect,
+.mermaid .node polygon,
+.mermaid .node circle,
+.mermaid .node path {
+  rx: 10px !important;
+  ry: 10px !important;
+  stroke-width: 2.5px !important;
+  transition: filter 0.2s ease, stroke 0.2s ease;
+}
+
+.mermaid .node .nodeLabel,
+.mermaid .node text {
+  font-family: var(--font-sans) !important;
+  font-size: 14.5px !important;
+  line-height: 1.55 !important;
+  font-weight: 500 !important;
+}
+
+.mermaid .node:hover rect,
+.mermaid .node:hover polygon,
+.mermaid .node:hover circle {
+  filter: brightness(1.04) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.15));
+  cursor: pointer;
+}
+
+/* Phase 1 : Genèse / Origines (Bleu royal) */
+.mermaid .node.genesis rect,
+.mermaid .node.genesis polygon,
+.mermaid .node.genesis circle {
+  fill: #eff6ff !important;
+  stroke: #2563eb !important;
+}
+.mermaid .node.genesis .nodeLabel,
+.mermaid .node.genesis text {
+  color: #1e3a8a !important;
+  fill: #1e3a8a !important;
+}
+
+/* Phase 2 : Crises / Événements armés (Rouge carmin) */
+.mermaid .node.crisis rect,
+.mermaid .node.crisis polygon,
+.mermaid .node.crisis circle {
+  fill: #fef2f2 !important;
+  stroke: #dc2626 !important;
+}
+.mermaid .node.crisis .nodeLabel,
+.mermaid .node.crisis text {
+  color: #991b1b !important;
+  fill: #991b1b !important;
+}
+
+/* Phase 3 : Conséquences / Institutions (Ambre / Or) */
+.mermaid .node.result rect,
+.mermaid .node.result polygon,
+.mermaid .node.result circle {
+  fill: #fffbeb !important;
+  stroke: #d97706 !important;
+}
+.mermaid .node.result .nodeLabel,
+.mermaid .node.result text {
+  color: #78350f !important;
+  fill: #78350f !important;
+}
+
+/* Pivot / Changement de Régime (Violet régalien) */
+.mermaid .node.pivot rect,
+.mermaid .node.pivot polygon,
+.mermaid .node.pivot circle {
+  fill: #f5f3ff !important;
+  stroke: #7c3aed !important;
+}
+.mermaid .node.pivot .nodeLabel,
+.mermaid .node.pivot text {
+  color: #581c87 !important;
+  fill: #581c87 !important;
+}
+
+/* Dark Mode Node Variants */
+[data-theme='dark'] .mermaid .node.genesis rect,
+[data-theme='dark'] .mermaid .node.genesis polygon {
+  fill: rgba(30, 58, 138, 0.28) !important;
+  stroke: #60a5fa !important;
+}
+[data-theme='dark'] .mermaid .node.genesis .nodeLabel,
+[data-theme='dark'] .mermaid .node.genesis text {
+  color: #e0f2fe !important;
+  fill: #e0f2fe !important;
+}
+
+[data-theme='dark'] .mermaid .node.crisis rect,
+[data-theme='dark'] .mermaid .node.crisis polygon {
+  fill: rgba(185, 28, 28, 0.28) !important;
+  stroke: #f87171 !important;
+}
+[data-theme='dark'] .mermaid .node.crisis .nodeLabel,
+[data-theme='dark'] .mermaid .node.crisis text {
+  color: #fee2e2 !important;
+  fill: #fee2e2 !important;
+}
+
+[data-theme='dark'] .mermaid .node.result rect,
+[data-theme='dark'] .mermaid .node.result polygon {
+  fill: rgba(180, 83, 9, 0.28) !important;
+  stroke: #fbbf24 !important;
+}
+[data-theme='dark'] .mermaid .node.result .nodeLabel,
+[data-theme='dark'] .mermaid .node.result text {
+  color: #fef3c7 !important;
+  fill: #fef3c7 !important;
+}
+
+[data-theme='dark'] .mermaid .node.pivot rect,
+[data-theme='dark'] .mermaid .node.pivot polygon {
+  fill: rgba(109, 40, 217, 0.28) !important;
+  stroke: #c084fc !important;
+}
+[data-theme='dark'] .mermaid .node.pivot .nodeLabel,
+[data-theme='dark'] .mermaid .node.pivot text {
+  color: #f3e8ff !important;
+  fill: #f3e8ff !important;
+}
+
+/* Cluster Subgraphs */
+.mermaid .cluster rect {
+  fill: var(--bg-elevated) !important;
+  stroke: var(--border-highlight) !important;
+  stroke-width: 1.5px !important;
+  stroke-dasharray: 4, 4 !important;
+  rx: 14px !important;
+  ry: 14px !important;
+}
+
+.mermaid .cluster text {
+  font-family: var(--font-heading) !important;
+  font-weight: 700 !important;
+  fill: var(--text-main) !important;
+  font-size: 13px !important;
+}
+
+/* Edge Connectors */
+.mermaid .edgePath path {
+  stroke: var(--color-primary-light) !important;
+  stroke-width: 2px !important;
+}
+
+.mermaid .edgeLabel {
+  background-color: var(--bg-card) !important;
+  color: var(--text-muted) !important;
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem !important;
+  border: 1px solid var(--border-color);
+  padding: 2px 6px;
+}

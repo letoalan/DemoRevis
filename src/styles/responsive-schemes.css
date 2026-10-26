@@ -1,0 +1,68 @@
+@media (max-width: 768px) {
+  /* Key Ideas */
+  .key-ideas-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .idea-card {
+    padding: 1.25rem 1rem;
+    border-radius: var(--radius-md);
+  }
+
+  .idea-card:hover {
+    transform: none;
+  }
+
+  .guide-banner {
+    padding: 1.25rem 1rem;
+    border-radius: var(--radius-md);
+  }
+
+  .guide-question {
+    font-size: 1.15rem;
+  }
+
+  /* Mermaid Schematics */
+  .mermaid-card {
+    padding: 1rem 0.75rem;
+    margin-bottom: 1.75rem;
+    border-radius: var(--radius-md);
+  }
+
+  .mermaid-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .mermaid-box {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    display: block;
+    text-align: left;
+    padding: 0.5rem 0;
+  }
+
+  .mermaid-box svg {
+    min-width: 560px;
+    height: auto;
+  }
+
+  /* Tables */
+  .table-wrapper {
+    margin-bottom: 1.5rem;
+    border-radius: var(--radius-md);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .custom-table {
+    min-width: 560px;
+    font-size: 0.86rem;
+  }
+
+  .custom-table th, .custom-table td {
+    padding: 0.75rem 0.85rem;
+  }
+
+}

@@ -1,0 +1,183 @@
+/* Mermaid Schema Container & Harmonized Styling */
+.mermaid-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.mermaid-card.fullscreen-mode {
+  position: fixed;
+  inset: 1rem;
+  z-index: 2500;
+  max-width: none;
+  max-height: none;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.6);
+  background: var(--bg-card);
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.mermaid-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px dashed var(--border-color);
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.mermaid-title-area {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mermaid-title-text {
+  font-weight: 700;
+  color: var(--text-main);
+  font-size: 1rem;
+}
+
+/* Harmonized Diagram Legend */
+.mermaid-legend {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.85rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--bg-elevated);
+  border-radius: var(--radius-md);
+  font-size: 0.8rem;
+}
+
+.legend-title {
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-right: 0.25rem;
+}
+
+.legend-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 0.76rem;
+  border: 1px solid transparent;
+}
+
+.legend-pill.genesis {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-color: #bfdbfe;
+}
+
+.legend-pill.crisis {
+  background: #fef2f2;
+  color: #b91c1c;
+  border-color: #fecaca;
+}
+
+.legend-pill.result {
+  background: #fffbeb;
+  color: #b45309;
+  border-color: #fde68a;
+}
+
+.legend-pill.pivot {
+  background: #f5f3ff;
+  color: #6d28d9;
+  border-color: #ddd6fe;
+}
+
+[data-theme='dark'] .legend-pill.genesis {
+  background: rgba(30, 58, 138, 0.3);
+  color: #93c5fd;
+  border-color: rgba(96, 165, 250, 0.3);
+}
+
+[data-theme='dark'] .legend-pill.crisis {
+  background: rgba(185, 28, 28, 0.3);
+  color: #fca5a5;
+  border-color: rgba(248, 113, 113, 0.3);
+}
+
+[data-theme='dark'] .legend-pill.result {
+  background: rgba(180, 83, 9, 0.3);
+  color: #fde68a;
+  border-color: rgba(251, 191, 36, 0.3);
+}
+
+[data-theme='dark'] .legend-pill.pivot {
+  background: rgba(109, 40, 217, 0.3);
+  color: #c4b5fd;
+  border-color: rgba(167, 139, 250, 0.3);
+}
+
+/* Zoom Toolbar */
+.mermaid-toolbar {
+  display: inline-flex;
+  align-items: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 2px;
+  gap: 2px;
+}
+
+.mermaid-tool-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  width: 32px;
+  height: 30px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: all var(--transition-fast);
+}
+
+.mermaid-tool-btn:hover {
+  background: var(--bg-elevated);
+  color: var(--color-primary);
+}
+
+.mermaid-hint {
+  font-size: 0.8rem;
+  color: var(--text-subtle);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.mermaid-box {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  min-height: 200px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: top center;
+}
+
+.mermaid-box svg {
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.04));
+}

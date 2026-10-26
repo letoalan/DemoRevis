@@ -3,236 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz & Flashcards — Comprendre la démocratie | DemoRevis</title>
-  <meta name="description" content="Espace complet d'auto-évaluation et d'entraînement HGGSP Première : Quiz interactifs avec explications détaillées et 40 flashcards de révision active.">
+  <title>Grand Quiz & Cartes Flash | DemoRevis</title>
+  <meta name="description" content="Espace d'entraînement interactif : Grand Quiz d'auto-évaluation HGGSP Thème 1 et 40 cartes mémoire flashcards réparties par chapitre.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏛️</text></svg>">
   <link rel="stylesheet" href="./src/style.css">
 </head>
 <body>
-  <div id="reading-progress"></div>
-
-  <!-- Header Nav -->
-  <header class="header-nav">
-    <div class="nav-container">
-      <a href="index.html" class="nav-brand" aria-label="DemoRevis Accueil">
-        <span class="brand-badge" style="background: linear-gradient(135deg, #1d4ed8, #b45309);">DR</span>
-        <div>
-          <span class="brand-text">DemoRevis</span>
-          <span class="brand-sub">HGGSP 1ère Générale</span>
-        </div>
-      </a>
-
-      <nav aria-label="Navigation principale">
-        <ul class="nav-links">
-          <li><a href="index.html" class="nav-link">Accueil</a></li>
-          <li><a href="p1.html" class="nav-link">P1 : Intro</a></li>
-          <li><a href="p2.html" class="nav-link">P2 : Axe 1</a></li>
-          <li><a href="p3.html" class="nav-link">P3 : Axe 2</a></li>
-          <li><a href="p4.html" class="nav-link">P4 : Conclusion UE</a></li>
-          <li><a href="quiz.html" class="nav-link active">Quiz</a></li>
-          <li><a href="analyse.html" class="nav-link" style="color: var(--color-primary); font-weight: 700;">Analyse Doc</a></li>
-        </ul>
-      </nav>
-
-      <div class="nav-controls">
-        <button type="button" class="theme-btn" id="theme-toggle-btn" aria-label="Changer le thème">🌙</button>
-        <button type="button" class="menu-toggle" id="mobile-menu-toggle" aria-label="Ouvrir le menu">☰</button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Mobile Nav -->
-  <div class="mobile-nav" id="mobile-nav-drawer">
-    <ul>
-      <li><a href="index.html" class="nav-link">Accueil</a></li>
-      <li><a href="p1.html" class="nav-link">P1 : Introduction (Qu'est-ce que la démocratie ?)</a></li>
-      <li><a href="p2.html" class="nav-link">P2 : Axe 1 (Démocratie directe et représentative)</a></li>
-      <li><a href="p3.html" class="nav-link">P3 : Axe 2 (Avancées et reculs des démocraties)</a></li>
-      <li><a href="p4.html" class="nav-link">P4 : Conclusion (L'UE et la démocratie)</a></li>
-      <li><a href="quiz.html" class="nav-link active">Grand Quiz Général</a></li>
-      <li><a href="analyse.html" class="nav-link">Exercice d'Analyse Critique de Document</a></li>
-    </ul>
-  </div>
+  <include src="./components/common/reading-progress.html" />
+  <include src="./components/common/navbar.html" />
 
   <main class="main-content">
-    <!-- Hero Banner -->
-    <section class="page-hero">
-      <div class="hero-meta">
-        <span class="period-badge">Auto-Évaluation Globale</span>
-        <span class="level-tag">50 questions disponibles</span>
-        <span class="level-tag">40 Flashcards</span>
-      </div>
-      <h1 class="page-title">Espace Quiz & Flashcards de Révision</h1>
-      <p class="page-lead">
-        Testez et consolidez votre maîtrise du Thème 1 : Comprendre un régime politique : la démocratie. Choisissez un quiz thématique ou lancez-vous dans le grand test général récapitulatif !
-      </p>
-    </section>
-
-    <!-- Quiz Engine Section -->
-    <section class="study-section">
-      <div class="section-head">
-        <h2 class="section-title"><span>🎯</span> Quiz Interactifs</h2>
-        <span class="section-pill">Choix du module</span>
-      </div>
-
-      <!-- Sélecteur de quiz -->
-      <div style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
-        <button type="button" class="flashcard-btn primary" id="btn-quiz-general">
-          🌟 Grand Quiz Général (10 q.)
-        </button>
-        <button type="button" class="flashcard-btn" id="btn-quiz-intro">
-          Introduction (10 q.)
-        </button>
-        <button type="button" class="flashcard-btn" id="btn-quiz-axe1">
-          Axe 1 : Athènes & Constant (10 q.)
-        </button>
-        <button type="button" class="flashcard-btn" id="btn-quiz-axe2">
-          Axe 2 : Tocqueville & Crises (10 q.)
-        </button>
-        <button type="button" class="flashcard-btn" id="btn-quiz-conclusion">
-          Conclusion : UE (10 q.)
-        </button>
-        <button type="button" class="flashcard-btn" id="btn-quiz-all" style="background: var(--color-gold-soft); color: var(--color-gold); font-weight: 700;">
-          ⚡ Défi Complet (50 questions)
-        </button>
-      </div>
-
-      <!-- Container Quiz -->
-      <div id="quiz-full-app"></div>
-    </section>
-
-    <!-- Flashcards Hub Section -->
-    <section class="study-section" id="flashcards-section" style="margin-top: 3.5rem;">
-      <div class="section-head">
-        <h2 class="section-title"><span>🧠</span> Hub de Mémorisation Active : Flashcards</h2>
-        <span class="section-pill">4 séries de 10 cartes</span>
-      </div>
-
-      <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.25rem;">
-        Passez en revue les concepts et définitions indispensables au Baccalauréat. Cliquez sur la carte ou appuyez sur [Espace] pour la retourner.
-      </p>
-
-      <!-- Sélecteur de catégorie Flashcards -->
-      <div style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
-        <button type="button" class="flashcard-btn primary" id="btn-fc-intro">
-          Série 1 : Introduction
-        </button>
-        <button type="button" class="flashcard-btn" id="btn-fc-axe1">
-          Série 2 : Axe 1 (Athènes & Constant)
-        </button>
-        <button type="button" class="flashcard-btn" id="btn-fc-axe2">
-          Série 3 : Axe 2 (Tocqueville & Crises)
-        </button>
-        <button type="button" class="flashcard-btn" id="btn-fc-conclusion">
-          Série 4 : Conclusion (UE)
-        </button>
-      </div>
-
-      <div id="flashcards-container"></div>
-    </section>
-
-    <!-- Pager vers Analyse de Doc -->
-    <nav class="pager-nav" aria-label="Navigation vers l'atelier pratique">
-      <a href="index.html" class="pager-btn secondary">← Retour à l'accueil</a>
-      <a href="analyse.html" class="pager-btn primary">Atelier Pratique : Analyse Critique de Document →</a>
-    </nav>
+    <include src="./components/quiz/quiz-hero.html" />
+    <include src="./components/quiz/quiz-engine.html" />
+    <include src="./components/quiz/flashcards-hub.html" />
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-col">
-        <h4 class="footer-heading">DemoRevis</h4>
-        <p class="footer-desc">Espace Quiz & Flashcards de révision — HGGSP 1ère</p>
-      </div>
-      <div class="footer-col">
-        <h4 class="footer-heading">Modules de cours</h4>
-        <ul class="footer-links">
-          <li><a href="p1.html">Introduction : La démocratie</a></li>
-          <li><a href="p2.html">Axe 1 : Démocratie directe et représentative</a></li>
-          <li><a href="p3.html">Axe 2 : Avancées et reculs</a></li>
-          <li><a href="p4.html">Conclusion : L'Union européenne</a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
+  <include src="./components/common/image-modal.html" />
+  <include src="./components/common/footer.html" />
 
-  <script type="module">
-    import { initQuiz } from './src/quiz.js';
-    import { quizzes } from './src/quiz-data.js';
-    import { initFlashcards } from './src/flashcards.js';
-
-    document.addEventListener('DOMContentLoaded', () => {
-      // Initialize Default Quiz (quizGeneral)
-      loadQuiz('general', 'Grand Quiz Général (10 questions transversales)', 'Quiz Global Thème 1');
-
-      // Quiz Switcher Buttons
-      const qButtons = {
-        'btn-quiz-general': { key: 'general', title: 'Grand Quiz Général', badge: 'Quiz Global' },
-        'btn-quiz-intro': { key: 'intro', title: 'Quiz Introduction : Qu\'est-ce que la démocratie ?', badge: 'Chapitre P1' },
-        'btn-quiz-axe1': { key: 'axe1', title: 'Quiz Axe 1 : Démocratie directe et représentative', badge: 'Chapitre P2' },
-        'btn-quiz-axe2': { key: 'axe2', title: 'Quiz Axe 2 : Avancées et reculs des démocraties', badge: 'Chapitre P3' },
-        'btn-quiz-conclusion': { key: 'conclusion', title: 'Quiz Conclusion : L\'Union Européenne et la démocratie', badge: 'Chapitre P4' },
-      };
-
-      Object.entries(qButtons).forEach(([btnId, conf]) => {
-        const btn = document.getElementById(btnId);
-        if (btn) {
-          btn.addEventListener('click', () => {
-            document.querySelectorAll('.study-section .flashcard-btn').forEach(b => b.classList.remove('primary'));
-            btn.classList.add('primary');
-            loadQuiz(conf.key, conf.title, conf.badge);
-          });
-        }
-      });
-
-      // Special 50 questions quiz
-      const btnAll = document.getElementById('btn-quiz-all');
-      if (btnAll) {
-        btnAll.addEventListener('click', () => {
-          document.querySelectorAll('.study-section .flashcard-btn').forEach(b => b.classList.remove('primary'));
-          btnAll.classList.add('primary');
-          const allQuestions = [
-            ...quizzes.general,
-            ...quizzes.intro,
-            ...quizzes.axe1,
-            ...quizzes.axe2,
-            ...quizzes.conclusion
-          ];
-          initQuiz(allQuestions, '#quiz-full-app', {
-            title: 'Défi Grand Chelem : 50 questions Thème 1',
-            badge: 'Contrôle Global Approfondi'
-          });
-        });
-      }
-
-      function loadQuiz(key, title, badge) {
-        const questions = quizzes[key] || quizzes.general;
-        initQuiz(questions, '#quiz-full-app', { title, badge });
-      }
-
-      // Flashcards category switcher
-      let currentFcCategory = 'intro';
-      initFlashcards('intro', '#flashcards-container');
-
-      const fcButtons = {
-        'btn-fc-intro': 'intro',
-        'btn-fc-axe1': 'axe1',
-        'btn-fc-axe2': 'axe2',
-        'btn-fc-conclusion': 'conclusion'
-      };
-
-      Object.entries(fcButtons).forEach(([btnId, cat]) => {
-        const btn = document.getElementById(btnId);
-        if (btn) {
-          btn.addEventListener('click', () => {
-            document.querySelectorAll('#flashcards-section .flashcard-btn').forEach(b => b.classList.remove('primary'));
-            btn.classList.add('primary');
-            currentFcCategory = cat;
-            initFlashcards(cat, '#flashcards-container');
-          });
-        }
-      });
-    });
+  <script>
+    window.__PAGE_QUIZ_KEY__ = 'general';
+    window.__PAGE_QUIZ_TITLE__ = "Grand Quiz Général (10 questions transversales)";
+    window.__PAGE_QUIZ_BADGE__ = "Contrôle global Thème 1";
   </script>
   <script type="module" src="./src/main.js"></script>
 </body>

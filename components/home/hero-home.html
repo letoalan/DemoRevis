@@ -1,14 +1,17 @@
 <!-- Hero Banner avec Vidéo d'Arrière-Plan (Parthénon, Athènes) -->
 <section class="page-hero hero-with-video">
   <div class="hero-video-wrapper" aria-hidden="true">
-    <iframe
-      class="hero-video-iframe"
-      src="https://www.youtube-nocookie.com/embed/-l7MTg_NSZ8?autoplay=1&mute=1&loop=1&playlist=-l7MTg_NSZ8&controls=0&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&modestbranding=1&playsinline=1"
-      title="Vidéo d'arrière-plan du Parthénon à Athènes"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      tabindex="-1"
-    ></iframe>
+    <video
+      class="hero-video-element"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      aria-hidden="true"
+    >
+      <source src="./media/video/parthenon.mp4" type="video/mp4">
+    </video>
     <div class="hero-video-overlay"></div>
   </div>
 

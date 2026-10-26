@@ -12,7 +12,7 @@ L'ensemble des styles du projet a été restructuré en 21 modules indépendants
 | `base.css` | 36 | Normalisation CSS, structure du `<body>`, layout principal et conteneurs. |
 | `navigation.css` | 175 | Barre de navigation supérieure, logo typographique, liens de pages et menu mobile drawer animé. |
 | `hero.css` | 122 | Bannière Hero académique, badges de périodisation, typographie hero. |
-| `hero-video.css` | 132 | Intégration iframe YouTube en arrière-plan plein écran avec overlay dégradé sombre/clair et adaptation smartphone. |
+| `hero-video.css` | 146 | Intégration vidéo plein écran (HTML5 `video` avec `object-fit: cover` & fallback iframe) en arrière-plan avec overlay dégradé sombre/clair et adaptation smartphone. |
 | `audio-player.css` | 185 | Station audio, barre de défilement, bouton lecture/pause, horodatage et zone de transcription. |
 | `dual-audio.css` | 57 | Sélecteur à deux onglets (Briefing express vs Podcast approfondi) et bascule tactile mobile. |
 | `cards.css` | 127 | Cartes d'idées maîtresses, question directrice, mind maps et boîtes d'analyse avec adaptation smartphone. |

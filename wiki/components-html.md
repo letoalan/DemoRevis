@@ -18,7 +18,7 @@ Pour respecter l'obligation de **fichiers $\le 200$ lignes**, l'ensemble des pag
 ## 2. Composants par Page
 
 ### Accueil : `components/home/`
-* `hero-home.html` (31 lignes) : En-tête avec vidéo d'arrière-plan du Parthénon (YouTube embed plein écran) et descriptif du thème.
+* `hero-home.html` (33 lignes) : En-tête avec vidéo d'arrière-plan du Parthénon (balise vidéo HTML5 locale `media/video/parthenon.mp4`) et descriptif du thème.
 * `timeline-track.html` (27 lignes) : Frise synoptique cliquable des 4 étapes de révision.
 * `course-grid.html` (86 lignes) : Grille de présentation des 4 modules de cours avec liens d'accès direct.
 * `analyse-promo.html` (40 lignes) : Carte promotionnelle du studio d'analyse critique de documents.

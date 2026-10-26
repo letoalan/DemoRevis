@@ -1,0 +1,164 @@
+[
+  {
+    "file": "assets/img/democratie-vote.png",
+    "title": "Le Vote et la Participation Citoyenne",
+    "artist": "Illustration vectorielle",
+    "source_url": "Collection pédagogique HGGSP",
+    "license": "Usage éducatif",
+    "date": "2022",
+    "location": "Chapitre Introduction"
+  },
+  {
+    "file": "assets/img/capitole.jpg",
+    "title": "L'assaut du Capitole des États-Unis (6 janvier 2021)",
+    "artist": "Photographie de presse",
+    "source_url": "Archives de presse internationale",
+    "license": "Usage pédagogique / Revue de presse",
+    "date": "6 janvier 2021",
+    "location": "Washington D.C., États-Unis"
+  },
+  {
+    "file": "assets/img/congres-usa.jpg",
+    "title": "Le Capitole et la Démocratie Représentative Américaine",
+    "artist": "Photographie institutionnelle",
+    "source_url": "Domaine Public / US Gov",
+    "license": "Domaine Public",
+    "date": "2020",
+    "location": "Washington D.C."
+  },
+  {
+    "file": "assets/img/athenes-democratie.png",
+    "title": "La Démocratie Athénienne Expliquée",
+    "artist": "Schéma pédagogique historique",
+    "source_url": "Collection pédagogique HGGSP",
+    "license": "Usage éducatif",
+    "date": "Ve siècle av. J.-C. / Reconstitution moderne",
+    "location": "Athènes, Grèce"
+  },
+  {
+    "file": "assets/img/athenes-institutions.jpg",
+    "title": "Organisation des Institutions d'Athènes (Ecclésia, Boulè, Héliée)",
+    "artist": "Art Presse / Manuel scolaire",
+    "source_url": "Infographie pédagogique",
+    "license": "Usage éducatif",
+    "date": "2022",
+    "location": "Axe 1 - Athènes"
+  },
+  {
+    "file": "assets/img/aristote.jpg",
+    "title": "Aristote, Philosophe et Critique des Régimes Politiques",
+    "artist": "Buste antique (Lysippe)",
+    "source_url": "Wikimedia Commons",
+    "license": "Domaine Public",
+    "date": "IVe siècle av. J.-C.",
+    "location": "Musée du Louvre / Musée National Romain"
+  },
+  {
+    "file": "assets/img/rome-republique.jpg",
+    "title": "Comment Rome a inventé la République",
+    "artist": "Gravure historique",
+    "source_url": "Revue Histoire / Commons",
+    "license": "Domaine Public",
+    "date": "Ier siècle av. J.-C.",
+    "location": "Rome antique"
+  },
+  {
+    "file": "assets/img/constant-portrait.png",
+    "title": "Portrait de Benjamin Constant (1767-1830)",
+    "artist": "Gravure d'époque",
+    "source_url": "Bibliothèque nationale de France (BnF) / Commons",
+    "license": "Domaine Public",
+    "date": "Vers 1819",
+    "location": "Paris, France"
+  },
+  {
+    "file": "assets/img/tocqueville.jpg",
+    "title": "Alexis de Tocqueville (1805-1859)",
+    "artist": "Théodore Chassériau",
+    "source_url": "Musée de l'Histoire de France, Versailles",
+    "license": "Domaine Public",
+    "date": "1850",
+    "location": "Axe 2 - Tocqueville"
+  },
+  {
+    "file": "assets/img/hitler-weimar.jpg",
+    "title": "Adolf Hitler et son cabinet ministériel (30 janvier 1933)",
+    "artist": "Bundesarchiv (Bild 183-H28422)",
+    "source_url": "German Federal Archive / Wikimedia Commons",
+    "license": "CC-BY-SA 3.0 DE",
+    "date": "1933",
+    "location": "Berlin, Allemagne"
+  },
+  {
+    "file": "assets/img/allende-chili.jpg",
+    "title": "Salvador Allende, Président constitutionnel du Chili",
+    "artist": "Photographie officielle",
+    "source_url": "Biblioteca del Congreso Nacional de Chile / Commons",
+    "license": "CC-BY-3.0 CL",
+    "date": "1972",
+    "location": "Santiago, Chili"
+  },
+  {
+    "file": "assets/img/oeillets-portugal.jpg",
+    "title": "La Révolution des Œillets à Lisbonne",
+    "artist": "Photographie historique",
+    "source_url": "Archives nationales du Portugal / Commons",
+    "license": "Usage éducatif / Domaine Public",
+    "date": "25 avril 1974",
+    "location": "Lisbonne, Portugal"
+  },
+  {
+    "file": "assets/img/espagne-transition.jpg",
+    "title": "Transition Démocratique Espagnole (1975-1978)",
+    "artist": "Document officiel BOE",
+    "source_url": "Boletín Oficial del Estado / Archives espagnoles",
+    "license": "Domaine Public",
+    "date": "1975-1978",
+    "location": "Madrid, Espagne"
+  },
+  {
+    "file": "assets/img/espagne-tejero.jpg",
+    "title": "Tentative de Coup d'État du 23-F au Congrès des députés",
+    "artist": "Manuel Pérez Barriopedro / Sipa / AP",
+    "source_url": "World Press Photo of the Year 1981",
+    "license": "Revue de presse historique / Usage pédagogique",
+    "date": "23 février 1981",
+    "location": "Cortes Generales, Madrid, Espagne"
+  },
+  {
+    "file": "assets/img/ue-institutions.png",
+    "title": "Fonctionnement Institutionnel de l'Union Européenne",
+    "artist": "Schéma pédagogique Toute l'Europe / Documentation européenne",
+    "source_url": "Commission Européenne",
+    "license": "Usage éducatif",
+    "date": "2020",
+    "location": "Bruxelles / Strasbourg"
+  },
+  {
+    "file": "assets/img/ue-parlement.jpg",
+    "title": "Hémicycle du Parlement Européen à Strasbourg",
+    "artist": "Union Européenne / Parlement européen",
+    "source_url": "Audiovisual Services EU",
+    "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+    "date": "2021",
+    "location": "Strasbourg, France"
+  },
+  {
+    "file": "assets/img/vadot-ue-2017.png",
+    "title": "Dessin de presse : L'Europe et l'abstention",
+    "artist": "Nicolas Vadot",
+    "source_url": "« Les décodeurs de l'Europe », Commission européenne",
+    "license": "Usage pédagogique - Épreuve de Baccalauréat",
+    "date": "2017",
+    "location": "Document pour analyse critique (Sujet A)"
+  },
+  {
+    "file": "assets/img/parisien-abstention-2021.png",
+    "title": "Infographie : Profil des abstentionnistes et évolution de l'abstention",
+    "artist": "Le Parisien / Ipsos Sopra Steria",
+    "source_url": "Le Parisien, édition du 21 juin 2021",
+    "license": "Usage pédagogique - Épreuve de Baccalauréat",
+    "date": "21 juin 2021",
+    "location": "Document pour analyse critique (Sujet B)"
+  }
+]

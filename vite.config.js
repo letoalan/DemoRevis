@@ -34,9 +34,13 @@ function htmlIncludePlugin() {
   };
 }
 
-export default defineConfig(({ mode }) => ({
-  base: mode === 'production' ? '/DemoRevis/' : '/',
-  plugins: [htmlIncludePlugin()],
+export default defineConfig(({ mode }) => {
+  const gitlabBase = process.env.CI_PROJECT_NAME ? `/${process.env.CI_PROJECT_NAME}/` : '/DemoRevis/';
+  const basePath = process.env.VITE_BASE_PATH || gitlabBase;
+
+  return {
+    base: mode === 'production' ? basePath : '/',
+    plugins: [htmlIncludePlugin()],
   build: {
     rollupOptions: {
       input: {
@@ -50,4 +54,5 @@ export default defineConfig(({ mode }) => ({
       }
     }
   }
-}));
+};
+});

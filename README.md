@@ -7,7 +7,7 @@
 Plateforme interactive d'apprentissage et de révision du **Thème 1 d'Histoire-Géographie, Géopolitique et Sciences Politiques (HGGSP) en classe de Première** :
 *« Comprendre un régime politique : la démocratie »*.
 
-Inspiré de l'excellence pédagogique de [RevoRevis](https://github.com/letoalan/RevoRevis.git).
+Inspiré de l'expérience pédagogique de [RevoRevis](https://github.com/letoalan/RevoRevis.git).
 
 ---
 

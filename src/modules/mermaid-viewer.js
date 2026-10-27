@@ -1,8 +1,9 @@
 /**
  * Mermaid Schematics Viewer
- * Rendering, responsive theme sync, zoom toolbar (+, -, reset), and drag-to-pan.
+ * Rendering, responsive theme sync, zoom toolbar, touch pan & pinch-zoom, fit/readable modes.
  */
 import mermaid from 'mermaid';
+import { setupPanZoomEvents } from './pan-zoom-gestures.js';
 
 export async function initMermaid() {
   const elements = document.querySelectorAll('.mermaid');
@@ -42,7 +43,7 @@ export async function initMermaid() {
       titleColor: '#0f172a'
     },
     flowchart: {
-      useMaxWidth: true,
+      useMaxWidth: false,
       htmlLabels: true,
       curve: 'basis',
       padding: 16,
@@ -52,9 +53,7 @@ export async function initMermaid() {
   });
 
   try {
-    await mermaid.run({
-      querySelector: '.mermaid'
-    });
+    await mermaid.run({ querySelector: '.mermaid' });
   } catch (err) {
     console.error('Mermaid render error:', err);
   }
@@ -62,81 +61,121 @@ export async function initMermaid() {
   initMermaidToolbars();
 }
 
+function getSvgDimensions(svg) {
+  if (svg.viewBox && svg.viewBox.baseVal && svg.viewBox.baseVal.width > 0) {
+    return { width: svg.viewBox.baseVal.width, height: svg.viewBox.baseVal.height };
+  }
+  const vb = svg.getAttribute('viewBox');
+  if (vb) {
+    const p = vb.split(/[\s,]+/).map(Number);
+    if (p.length === 4 && p[2] > 0) return { width: p[2], height: p[3] };
+  }
+  return { width: 920, height: 600 };
+}
+
 export function initMermaidToolbars() {
   document.querySelectorAll('.mermaid-card').forEach(card => {
+    const box = card.querySelector('.mermaid-box');
+    const stage = card.querySelector('.mermaid');
+    const svg = box?.querySelector('svg');
+    if (!box || !stage || !svg) return;
+
+    const { width: iW, height: iH } = getSvgDimensions(svg);
+    svg.style.width = `${iW}px`;
+    svg.style.height = `${iH}px`;
+    svg.style.maxWidth = 'none';
+
+    let scale = 1.0;
+    let panX = 0;
+    let panY = 0;
+    let isRotated = false;
+
+    const fitBtn = card.querySelector('.btn-zoom-fit');
+    const resetBtn = card.querySelector('.btn-zoom-reset');
+    const rotateBtn = card.querySelector('.btn-rotate');
+
+    function getFitScale() {
+      const pad = window.innerWidth <= 768 ? 16 : 28;
+      const bW = Math.max(80, box.clientWidth - pad);
+      const bH = Math.max(80, box.clientHeight - pad);
+      return Math.min(bW / iW, bH / iH, 1.15);
+    }
+
+    function applyTransform(animate = true) {
+      stage.classList.toggle('is-dragging', !animate);
+      stage.style.transform = `translate3d(${Math.round(panX)}px, ${Math.round(panY)}px, 0) scale(${scale})`;
+      if (resetBtn) resetBtn.textContent = `🔍 Lisible (${Math.round(scale * 100)}%)`;
+      if (fitBtn) fitBtn.classList.toggle('is-active', Math.abs(scale - getFitScale()) < 0.05);
+      if (resetBtn) resetBtn.classList.toggle('is-active', Math.abs(scale - 1.0) < 0.05);
+    }
+
+    function fitToView(animate = true) {
+      scale = getFitScale();
+      panX = (box.clientWidth - iW * scale) / 2;
+      panY = Math.max(8, (box.clientHeight - iH * scale) / 2);
+      applyTransform(animate);
+    }
+
+    function setReadable(animate = true) {
+      scale = 1.0;
+      panX = Math.max(12, (box.clientWidth - iW) / 2 > 12 ? (box.clientWidth - iW) / 2 : 12);
+      panY = 16;
+      applyTransform(animate);
+    }
+
+    function zoomAround(cx, cy, newScale) {
+      newScale = Math.max(0.22, Math.min(2.8, newScale));
+      panX = cx - (cx - panX) * (newScale / scale);
+      panY = cy - (cy - panY) * (newScale / scale);
+      scale = newScale;
+      applyTransform(true);
+    }
+
+    // Initial scale: fit to container
+    fitToView(false);
+
     if (card.dataset.toolbarInit) return;
     card.dataset.toolbarInit = 'true';
 
-    const box = card.querySelector('.mermaid-box');
-    if (!box) return;
-
-    let currentScale = 1.0;
-    const resetBtn = card.querySelector('.btn-zoom-reset');
-
-    function setScale(scale) {
-      currentScale = Math.max(0.7, Math.min(2.5, Math.round(scale * 100) / 100));
-      const svg = box.querySelector('svg');
-      if (svg) {
-        if (currentScale === 1.0) {
-          svg.style.transform = '';
-        } else {
-          svg.style.transform = `scale(${currentScale})`;
-          svg.style.transformOrigin = 'center top';
-        }
-        svg.style.transition = 'transform 0.2s cubic-bezier(0.16, 1, 0.3, 1)';
-      }
-      if (resetBtn) {
-        resetBtn.textContent = `↺ ${Math.round(currentScale * 100)}%`;
-      }
-    }
+    fitBtn?.addEventListener('click', () => fitToView(true));
+    resetBtn?.addEventListener('click', () => setReadable(true));
 
     card.querySelector('.btn-zoom-in')?.addEventListener('click', () => {
-      setScale(currentScale + 0.15);
+      zoomAround(box.clientWidth / 2, box.clientHeight / 2, scale * 1.25);
     });
 
     card.querySelector('.btn-zoom-out')?.addEventListener('click', () => {
-      setScale(currentScale - 0.15);
-    });
-
-    resetBtn?.addEventListener('click', () => {
-      setScale(1.0);
+      zoomAround(box.clientWidth / 2, box.clientHeight / 2, scale / 1.25);
     });
 
     card.querySelector('.btn-fullscreen')?.addEventListener('click', () => {
       const isFull = card.classList.toggle('fullscreen-mode');
       const btn = card.querySelector('.btn-fullscreen');
-      if (btn) btn.innerHTML = isFull ? '✕ Réduire' : '⛶ Plein écran';
-      setScale(1.0);
+      if (btn) btn.innerHTML = isFull ? '✕ Quitter' : '⛶ Plein écran';
+      document.body.style.overflow = isFull ? 'hidden' : '';
+      if (!isFull && isRotated) {
+        isRotated = false;
+        card.classList.remove('is-rotated');
+      }
+      setTimeout(() => fitToView(true), 80);
     });
 
-    // Drag-to-pan navigation for comfortable viewing
-    let isDown = false;
-    let startX = 0;
-    let scrollLeft = 0;
-
-    box.addEventListener('mousedown', (e) => {
-      isDown = true;
-      box.style.cursor = 'grabbing';
-      startX = e.pageX - box.offsetLeft;
-      scrollLeft = box.scrollLeft;
+    rotateBtn?.addEventListener('click', () => {
+      isRotated = !isRotated;
+      card.classList.toggle('is-rotated', isRotated);
+      setTimeout(() => fitToView(true), 80);
     });
 
-    box.addEventListener('mouseleave', () => {
-      isDown = false;
-      box.style.cursor = 'grab';
-    });
-
-    box.addEventListener('mouseup', () => {
-      isDown = false;
-      box.style.cursor = 'grab';
-    });
-
-    box.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - box.offsetLeft;
-      const walk = (x - startX) * 1.5;
-      box.scrollLeft = scrollLeft - walk;
+    setupPanZoomEvents(box, stage, {
+      getState: () => ({ scale, panX, panY, fitScale: getFitScale() }),
+      setPan: (x, y) => { panX = x; panY = y; applyTransform(false); },
+      zoomAround,
+      toggleMode: () => {
+        if (Math.abs(scale - getFitScale()) < 0.1) setReadable(true);
+        else fitToView(true);
+      }
     });
   });
 }
+
+

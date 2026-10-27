@@ -46,23 +46,28 @@
   .mermaid-toolbar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     gap: 0.35rem;
     flex-wrap: wrap;
-    padding: 0.35rem;
+    padding: 0.4rem 0.35rem;
   }
 
   .mermaid-toolbar button,
+  .btn-zoom-fit,
   .btn-zoom-in,
   .btn-zoom-out,
   .btn-zoom-reset,
-  .btn-fullscreen {
-    flex: 1 1 calc(25% - 0.35rem);
-    min-height: 40px;
-    padding: 0.35rem 0.45rem;
-    font-size: 0.78rem;
+  .btn-fullscreen,
+  .btn-rotate {
+    flex: 1 1 auto;
+    min-height: 38px;
+    padding: 0.35rem 0.5rem;
+    font-size: 0.76rem;
     justify-content: center;
     white-space: nowrap;
+  }
+
+  .btn-rotate {
+    display: inline-flex;
   }
 
   .mermaid-hint {
@@ -74,18 +79,15 @@
   }
 
   .mermaid-box {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.75rem 0.25rem;
-    min-height: 220px;
+    position: relative;
+    overflow: hidden;
+    min-height: 300px;
+    height: 360px;
+    padding: 0;
   }
 
   .mermaid-box svg {
-    width: 100% !important;
-    max-width: 100% !important;
+    max-width: none !important;
     height: auto !important;
   }
 
@@ -93,12 +95,12 @@
     inset: 0 !important;
     border-radius: 0 !important;
     padding: 0.75rem 0.5rem !important;
-    z-index: 9999 !important;
+    z-index: 99999 !important;
   }
 
   .mermaid-card.fullscreen-mode .mermaid-box {
-    max-height: calc(100vh - 100px);
-    overflow: auto;
+    height: 100% !important;
+    max-height: none !important;
   }
 
   /* Academic Tables */

@@ -169,7 +169,6 @@
   will-change: transform;
   display: inline-block;
   width: max-content;
-  min-width: 860px;
 }
 
 .mermaid-box .mermaid.is-dragging {

@@ -1,65 +1,69 @@
 /**
  * Mermaid Schematics Viewer
- * Rendering, responsive theme sync, zoom toolbar, touch pan & pinch-zoom, fit/readable modes.
+ * Auto wrappingWidth per breakpoint, re-render on resize/theme, zoom toolbar, touch pan & pinch-zoom.
  */
 import mermaid from 'mermaid';
 import { setupPanZoomEvents } from './pan-zoom-gestures.js';
 
-export async function initMermaid() {
-  const elements = document.querySelectorAll('.mermaid');
+const sources = new WeakMap();
+
+function wrapWidth() {
+  const vw = document.documentElement.clientWidth;
+  if (vw < 480) return 160;
+  if (vw < 900) return 200;
+  return 260;
+}
+
+function getThemeVars(isDark) {
+  return {
+    fontFamily: 'Plus Jakarta Sans, system-ui, sans-serif',
+    fontSize: '14.5px',
+    primaryColor: isDark ? '#1e3a8a' : '#eff6ff',
+    primaryTextColor: isDark ? '#f8fafc' : '#0f172a',
+    primaryBorderColor: isDark ? '#60a5fa' : '#1d4ed8',
+    lineColor: isDark ? '#93c5fd' : '#1d4ed8',
+    secondaryColor: isDark ? '#1e293b' : '#f8fafc',
+    tertiaryColor: isDark ? '#131d33' : '#ffffff',
+    clusterBkg: isDark ? 'rgba(30, 58, 138, 0.22)' : 'rgba(30, 58, 138, 0.04)',
+    clusterBorder: isDark ? '#60a5fa' : '#93c5fd',
+    mainBkg: isDark ? '#1e293b' : '#ffffff',
+    titleColor: isDark ? '#f8fafc' : '#0f172a'
+  };
+}
+
+export async function initMermaid(selector = '.mermaid') {
+  const elements = document.querySelectorAll(selector);
   if (!elements.length) return;
 
-  if (document.fonts && document.fonts.ready) {
-    try {
-      await document.fonts.ready;
-    } catch (_) {}
+  if (document.fonts?.ready) {
+    try { await document.fonts.ready; } catch (_) {}
   }
 
-  const currentTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default';
+  elements.forEach(el => {
+    if (!sources.has(el)) sources.set(el, el.textContent);
+    el.removeAttribute('data-processed');
+    el.textContent = sources.get(el);
+  });
+
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
 
   mermaid.initialize({
     startOnLoad: false,
     securityLevel: 'loose',
-    theme: currentTheme,
-    themeVariables: currentTheme === 'dark' ? {
-      fontFamily: 'Plus Jakarta Sans, sans-serif',
-      fontSize: '14.5px',
-      primaryColor: '#1e3a8a',
-      primaryTextColor: '#f8fafc',
-      primaryBorderColor: '#60a5fa',
-      lineColor: '#93c5fd',
-      secondaryColor: '#1e293b',
-      tertiaryColor: '#131d33',
-      clusterBkg: 'rgba(30, 58, 138, 0.22)',
-      clusterBorder: '#60a5fa',
-      mainBkg: '#1e293b',
-      titleColor: '#f8fafc'
-    } : {
-      fontFamily: 'Plus Jakarta Sans, sans-serif',
-      fontSize: '14.5px',
-      primaryColor: '#eff6ff',
-      primaryTextColor: '#0f172a',
-      primaryBorderColor: '#1d4ed8',
-      lineColor: '#1d4ed8',
-      secondaryColor: '#f8fafc',
-      tertiaryColor: '#ffffff',
-      clusterBkg: 'rgba(30, 58, 138, 0.04)',
-      clusterBorder: '#93c5fd',
-      mainBkg: '#ffffff',
-      titleColor: '#0f172a'
-    },
+    theme: isDark ? 'dark' : 'default',
+    themeVariables: getThemeVars(isDark),
     flowchart: {
-      useMaxWidth: false,
       htmlLabels: true,
-      curve: 'basis',
-      padding: 24,
-      nodeSpacing: 45,
-      rankSpacing: 48
+      useMaxWidth: false,
+      wrappingWidth: wrapWidth(),
+      padding: 14,
+      nodeSpacing: 32,
+      rankSpacing: 46
     }
   });
 
   try {
-    await mermaid.run({ querySelector: '.mermaid' });
+    await mermaid.run({ querySelector: selector });
   } catch (err) {
     console.error('Mermaid render error:', err);
   }
@@ -67,19 +71,20 @@ export async function initMermaid() {
   initMermaidToolbars();
 }
 
-function getSvgDimensions(svg) {
-  let w = 860, h = 600;
-  if (svg.viewBox && svg.viewBox.baseVal && svg.viewBox.baseVal.width > 0) {
-    w = svg.viewBox.baseVal.width;
-    h = svg.viewBox.baseVal.height;
-  } else {
-    const vb = svg.getAttribute('viewBox');
-    if (vb) {
-      const p = vb.split(/[\s,]+/).map(Number);
-      if (p.length === 4 && p[2] > 0) { w = p[2]; h = p[3]; }
-    }
+let lastBucket = wrapWidth();
+window.addEventListener('resize', () => {
+  const b = wrapWidth();
+  if (b !== lastBucket) {
+    lastBucket = b;
+    initMermaid();
   }
-  return { width: Math.ceil(w), height: Math.ceil(h) };
+});
+
+function getSvgDimensions(svg) {
+  const vb = svg.viewBox?.baseVal;
+  if (vb?.width > 0) return { width: Math.ceil(vb.width), height: Math.ceil(vb.height) };
+  const raw = svg.getAttribute('viewBox')?.split(/[\s,]+/).map(Number);
+  return { width: Math.ceil(raw?.[2] || 800), height: Math.ceil(raw?.[3] || 500) };
 }
 
 export function initMermaidToolbars() {
@@ -94,10 +99,13 @@ export function initMermaidToolbars() {
     svg.style.height = `${iH}px`;
     svg.style.maxWidth = 'none';
 
-    let scale = 1.0;
-    let panX = 0;
-    let panY = 0;
-    let isRotated = false;
+    if (card._updateCard) {
+      card._updateCard(iW, iH);
+      return;
+    }
+
+    let scale = 1.0, panX = 0, panY = 0, isRotated = false;
+    let curW = iW, curH = iH;
 
     const fitBtn = card.querySelector('.btn-zoom-fit');
     const resetBtn = card.querySelector('.btn-zoom-reset');
@@ -107,7 +115,7 @@ export function initMermaidToolbars() {
       const pad = window.innerWidth <= 768 ? 16 : 28;
       const bW = Math.max(80, box.clientWidth - pad);
       const bH = Math.max(80, box.clientHeight - pad);
-      return Math.min(bW / iW, bH / iH, 1.15);
+      return Math.min(bW / curW, bH / curH, 1.15);
     }
 
     function applyTransform(animate = true) {
@@ -120,14 +128,14 @@ export function initMermaidToolbars() {
 
     function fitToView(animate = true) {
       scale = getFitScale();
-      panX = (box.clientWidth - iW * scale) / 2;
-      panY = Math.max(8, (box.clientHeight - iH * scale) / 2);
+      panX = (box.clientWidth - curW * scale) / 2;
+      panY = Math.max(8, (box.clientHeight - curH * scale) / 2);
       applyTransform(animate);
     }
 
     function setReadable(animate = true) {
       scale = 1.0;
-      panX = Math.max(12, (box.clientWidth - iW) / 2 > 12 ? (box.clientWidth - iW) / 2 : 12);
+      panX = Math.max(12, (box.clientWidth - curW) / 2 > 12 ? (box.clientWidth - curW) / 2 : 12);
       panY = 16;
       applyTransform(animate);
     }
@@ -140,21 +148,18 @@ export function initMermaidToolbars() {
       applyTransform(true);
     }
 
-    fitToView(false);
+    card._updateCard = (newW, newH) => {
+      curW = newW;
+      curH = newH;
+      fitToView(false);
+    };
 
-    if (card.dataset.toolbarInit) return;
-    card.dataset.toolbarInit = 'true';
+    fitToView(false);
 
     fitBtn?.addEventListener('click', () => fitToView(true));
     resetBtn?.addEventListener('click', () => setReadable(true));
-
-    card.querySelector('.btn-zoom-in')?.addEventListener('click', () => {
-      zoomAround(box.clientWidth / 2, box.clientHeight / 2, scale * 1.25);
-    });
-
-    card.querySelector('.btn-zoom-out')?.addEventListener('click', () => {
-      zoomAround(box.clientWidth / 2, box.clientHeight / 2, scale / 1.25);
-    });
+    card.querySelector('.btn-zoom-in')?.addEventListener('click', () => zoomAround(box.clientWidth / 2, box.clientHeight / 2, scale * 1.25));
+    card.querySelector('.btn-zoom-out')?.addEventListener('click', () => zoomAround(box.clientWidth / 2, box.clientHeight / 2, scale / 1.25));
 
     card.querySelector('.btn-fullscreen')?.addEventListener('click', () => {
       const isFull = card.classList.toggle('fullscreen-mode');
@@ -176,12 +181,9 @@ export function initMermaidToolbars() {
 
     setupPanZoomEvents(box, stage, {
       getState: () => ({
-        scale,
-        panX,
-        panY,
-        fitScale: getFitScale(),
-        canPanY: iH * scale > box.clientHeight + 10,
-        canPanX: iW * scale > box.clientWidth + 10
+        scale, panX, panY, fitScale: getFitScale(),
+        canPanY: curH * scale > box.clientHeight + 10,
+        canPanX: curW * scale > box.clientWidth + 10
       }),
       setPan: (x, y) => { panX = x; panY = y; applyTransform(false); },
       zoomAround,
@@ -192,6 +194,3 @@ export function initMermaidToolbars() {
     });
   });
 }
-
-
-

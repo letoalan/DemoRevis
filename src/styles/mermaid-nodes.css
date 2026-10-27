@@ -1,4 +1,25 @@
 /* Mermaid SVG Node Styling Harmonization */
+.mermaid foreignObject {
+  overflow: visible;
+}
+
+.mermaid .nodeLabel,
+.mermaid .edgeLabel,
+.mermaid .label {
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
+  text-align: center;
+  line-height: 1.35;
+  font-family: var(--font-sans) !important;
+  font-size: 14.5px !important;
+  font-weight: 600 !important;
+}
+
+.mermaid .nodeLabel p {
+  margin: 0;
+}
+
 .mermaid .node rect,
 .mermaid .node polygon,
 .mermaid .node circle,
@@ -7,15 +28,6 @@
   ry: 10px !important;
   stroke-width: 2.5px !important;
   transition: filter 0.2s ease, stroke 0.2s ease;
-}
-
-.mermaid .node .nodeLabel,
-.mermaid .node text {
-  font-family: var(--font-sans) !important;
-  font-size: 14.5px !important;
-  line-height: 1.4 !important;
-  font-weight: 600 !important;
-  white-space: nowrap !important;
 }
 
 .mermaid .node b,

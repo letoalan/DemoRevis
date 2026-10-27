@@ -48,7 +48,7 @@
     align-items: center;
     gap: 0.35rem;
     flex-wrap: wrap;
-    padding: 0.4rem 0.35rem;
+    padding: 0.45rem 0.4rem;
   }
 
   .mermaid-toolbar button,
@@ -58,12 +58,30 @@
   .btn-zoom-reset,
   .btn-fullscreen,
   .btn-rotate {
-    flex: 1 1 auto;
     min-height: 38px;
-    padding: 0.35rem 0.5rem;
-    font-size: 0.76rem;
+    padding: 0.35rem 0.55rem;
+    font-size: 0.78rem;
     justify-content: center;
     white-space: nowrap;
+  }
+
+  .btn-zoom-fit,
+  .btn-zoom-reset {
+    flex: 1 1 calc(50% - 0.25rem);
+  }
+
+  .btn-zoom-in,
+  .btn-zoom-out {
+    flex: 0 0 36px;
+    min-width: 36px;
+    padding: 0;
+    font-size: 0.95rem;
+    font-weight: 800;
+  }
+
+  .btn-fullscreen,
+  .btn-rotate {
+    flex: 1 1 auto;
   }
 
   .btn-rotate {

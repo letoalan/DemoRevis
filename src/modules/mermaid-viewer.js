@@ -52,8 +52,8 @@ export async function initMermaid() {
       useMaxWidth: false,
       htmlLabels: true,
       curve: 'basis',
-      padding: 20,
-      nodeSpacing: 40,
+      padding: 24,
+      nodeSpacing: 45,
       rankSpacing: 48
     }
   });
@@ -67,38 +67,8 @@ export async function initMermaid() {
   initMermaidToolbars();
 }
 
-function fixNodeHeights(svg) {
-  svg.querySelectorAll('.node').forEach(node => {
-    const fo = node.querySelector('foreignObject');
-    const div = fo?.firstElementChild;
-    const rect = node.querySelector('rect');
-    if (!fo || !div || !rect) return;
-
-    div.style.overflow = 'visible';
-    fo.style.overflow = 'visible';
-
-    const scrollH = Math.ceil(div.scrollHeight || div.offsetHeight || 0);
-    const foH = parseFloat(fo.getAttribute('height')) || 0;
-    const rectH = parseFloat(rect.getAttribute('height')) || foH;
-
-    if (scrollH > foH - 4) {
-      const extraH = scrollH - foH + 18;
-      const newRectH = rectH + extraH;
-      const newFoH = foH + extraH;
-
-      fo.setAttribute('height', newFoH);
-      rect.setAttribute('height', newRectH);
-
-      const rectY = parseFloat(rect.getAttribute('y'));
-      if (!isNaN(rectY)) rect.setAttribute('y', rectY - extraH / 2);
-      const foY = parseFloat(fo.getAttribute('y'));
-      if (!isNaN(foY)) fo.setAttribute('y', foY - extraH / 2);
-    }
-  });
-}
-
 function getSvgDimensions(svg) {
-  let w = 920, h = 600;
+  let w = 860, h = 600;
   if (svg.viewBox && svg.viewBox.baseVal && svg.viewBox.baseVal.width > 0) {
     w = svg.viewBox.baseVal.width;
     h = svg.viewBox.baseVal.height;
@@ -109,7 +79,7 @@ function getSvgDimensions(svg) {
       if (p.length === 4 && p[2] > 0) { w = p[2]; h = p[3]; }
     }
   }
-  return { width: Math.ceil(w), height: Math.ceil(h + 30) };
+  return { width: Math.ceil(w), height: Math.ceil(h) };
 }
 
 export function initMermaidToolbars() {
@@ -118,8 +88,6 @@ export function initMermaidToolbars() {
     const stage = card.querySelector('.mermaid');
     const svg = box?.querySelector('svg');
     if (!box || !stage || !svg) return;
-
-    fixNodeHeights(svg);
 
     const { width: iW, height: iH } = getSvgDimensions(svg);
     svg.style.width = `${iW}px`;

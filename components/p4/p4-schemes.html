@@ -18,25 +18,25 @@
         <div class="mermaid-box">
           <div class="mermaid">
 flowchart TD
-    CIT["👥 <b>CITOYENS DES 27 ÉTATS MEMBRES DE L'UE</b><br/>Double légitimité démocratique : directe (Parlement) et indirecte (Conseils)"]
+    CIT["👥 <b>CITOYENS DES 27 ÉTATS MEMBRES DE L'UE</b><br/>Double légitimité démocratique :<br/>directe (Parlement) & indirecte (Conseils)"]
 
     CIT -->|Suffrage direct tous les 5 ans| PE
     CIT -->|Élections nationales| CONSEILS
 
-    PE["<b>🏛️ Parlement Européen (Strasbourg)</b><br/>• 720 députés élus directement par les citoyens<br/>• Co-législateur & investit la Commission"]
+    PE["<b>🏛️ Parlement Européen (Strasbourg)</b><br/>• 720 députés élus au suffrage direct<br/>• Co-législateur & investit la Commission"]
     CONSEILS["<b>👑 Conseil Européen & 💼 Conseil de l'UE</b><br/>• Chefs d'État (orientations stratégiques)<br/>• Ministres des 27 (co-législateur des États)"]
 
     subgraph MOTEUR["LE MOTEUR LÉGISLATIF EUROPÉEN"]
         direction TB
         COMM["<b>⚙️ Commission Européenne (Bruxelles)</b><br/>• 27 commissaires indépendants d'intérêt général<br/>• <u>Monopole exclusif d'initiative</u> des lois"]
-        LOI["<b>📜 ADOPTION DÉFINITIVE DES LOIS (Codécision)</b><br/>Approbation conjointe et obligatoire à égalité stricte"]
+        LOI["<b>📜 ADOPTION DÉFINITIVE DES LOIS (Codécision)</b><br/>Approbation conjointe et obligatoire<br/>à égalité stricte de voix"]
         COMM -->|Propose directives et règlements| LOI
     end
 
     PE -.->|Examen & vote| LOI
     CONSEILS -.->|Examen & vote| LOI
 
-    CJUE["<b>⚖️ Cour de Justice de l'UE (Luxembourg)</b><br/>Garantit l'État de droit et la primauté des traités"] -.->|Contrôle juridictionnel| COMM
+    CJUE["<b>⚖️ Cour de Justice de l'UE (Luxembourg)</b><br/>Garantit l'État de droit<br/>et la primauté des traités"] -.->|Contrôle juridictionnel| COMM
 
     style CIT fill:#1e3a8a,stroke:#3b82f6,stroke-width:2.5px,color:#ffffff
     style PE fill:#eff6ff,stroke:#1d4ed8,stroke-width:2px,color:#1e3a8a

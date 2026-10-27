@@ -9,6 +9,12 @@ export async function initMermaid() {
   const elements = document.querySelectorAll('.mermaid');
   if (!elements.length) return;
 
+  if (document.fonts && document.fonts.ready) {
+    try {
+      await document.fonts.ready;
+    } catch (_) {}
+  }
+
   const currentTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default';
 
   mermaid.initialize({
@@ -17,7 +23,7 @@ export async function initMermaid() {
     theme: currentTheme,
     themeVariables: currentTheme === 'dark' ? {
       fontFamily: 'Plus Jakarta Sans, sans-serif',
-      fontSize: '16px',
+      fontSize: '14.5px',
       primaryColor: '#1e3a8a',
       primaryTextColor: '#f8fafc',
       primaryBorderColor: '#60a5fa',
@@ -30,7 +36,7 @@ export async function initMermaid() {
       titleColor: '#f8fafc'
     } : {
       fontFamily: 'Plus Jakarta Sans, sans-serif',
-      fontSize: '16px',
+      fontSize: '14.5px',
       primaryColor: '#eff6ff',
       primaryTextColor: '#0f172a',
       primaryBorderColor: '#1d4ed8',
@@ -46,9 +52,9 @@ export async function initMermaid() {
       useMaxWidth: false,
       htmlLabels: true,
       curve: 'basis',
-      padding: 16,
-      nodeSpacing: 34,
-      rankSpacing: 38
+      padding: 20,
+      nodeSpacing: 40,
+      rankSpacing: 48
     }
   });
 
@@ -61,16 +67,49 @@ export async function initMermaid() {
   initMermaidToolbars();
 }
 
+function fixNodeHeights(svg) {
+  svg.querySelectorAll('.node').forEach(node => {
+    const fo = node.querySelector('foreignObject');
+    const div = fo?.firstElementChild;
+    const rect = node.querySelector('rect');
+    if (!fo || !div || !rect) return;
+
+    div.style.overflow = 'visible';
+    fo.style.overflow = 'visible';
+
+    const scrollH = Math.ceil(div.scrollHeight || div.offsetHeight || 0);
+    const foH = parseFloat(fo.getAttribute('height')) || 0;
+    const rectH = parseFloat(rect.getAttribute('height')) || foH;
+
+    if (scrollH > foH - 4) {
+      const extraH = scrollH - foH + 18;
+      const newRectH = rectH + extraH;
+      const newFoH = foH + extraH;
+
+      fo.setAttribute('height', newFoH);
+      rect.setAttribute('height', newRectH);
+
+      const rectY = parseFloat(rect.getAttribute('y'));
+      if (!isNaN(rectY)) rect.setAttribute('y', rectY - extraH / 2);
+      const foY = parseFloat(fo.getAttribute('y'));
+      if (!isNaN(foY)) fo.setAttribute('y', foY - extraH / 2);
+    }
+  });
+}
+
 function getSvgDimensions(svg) {
+  let w = 920, h = 600;
   if (svg.viewBox && svg.viewBox.baseVal && svg.viewBox.baseVal.width > 0) {
-    return { width: svg.viewBox.baseVal.width, height: svg.viewBox.baseVal.height };
+    w = svg.viewBox.baseVal.width;
+    h = svg.viewBox.baseVal.height;
+  } else {
+    const vb = svg.getAttribute('viewBox');
+    if (vb) {
+      const p = vb.split(/[\s,]+/).map(Number);
+      if (p.length === 4 && p[2] > 0) { w = p[2]; h = p[3]; }
+    }
   }
-  const vb = svg.getAttribute('viewBox');
-  if (vb) {
-    const p = vb.split(/[\s,]+/).map(Number);
-    if (p.length === 4 && p[2] > 0) return { width: p[2], height: p[3] };
-  }
-  return { width: 920, height: 600 };
+  return { width: Math.ceil(w), height: Math.ceil(h + 30) };
 }
 
 export function initMermaidToolbars() {
@@ -79,6 +118,8 @@ export function initMermaidToolbars() {
     const stage = card.querySelector('.mermaid');
     const svg = box?.querySelector('svg');
     if (!box || !stage || !svg) return;
+
+    fixNodeHeights(svg);
 
     const { width: iW, height: iH } = getSvgDimensions(svg);
     svg.style.width = `${iW}px`;
@@ -131,7 +172,6 @@ export function initMermaidToolbars() {
       applyTransform(true);
     }
 
-    // Initial scale: fit to container
     fitToView(false);
 
     if (card.dataset.toolbarInit) return;
@@ -167,7 +207,14 @@ export function initMermaidToolbars() {
     });
 
     setupPanZoomEvents(box, stage, {
-      getState: () => ({ scale, panX, panY, fitScale: getFitScale() }),
+      getState: () => ({
+        scale,
+        panX,
+        panY,
+        fitScale: getFitScale(),
+        canPanY: iH * scale > box.clientHeight + 10,
+        canPanX: iW * scale > box.clientWidth + 10
+      }),
       setPan: (x, y) => { panX = x; panY = y; applyTransform(false); },
       zoomAround,
       toggleMode: () => {
@@ -177,5 +224,6 @@ export function initMermaidToolbars() {
     });
   });
 }
+
 
 

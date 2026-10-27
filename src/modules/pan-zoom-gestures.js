@@ -76,9 +76,12 @@ export function setupPanZoomEvents(box, stage, handlers) {
       const dx = e.touches[0].clientX - startX;
       const dy = e.touches[0].clientY - startY;
       const s = handlers.getState();
-      const isZoomed = s.scale > s.fitScale * 1.08;
+      const isZoomed = s.scale > s.fitScale * 1.05;
       const isHorizontal = Math.abs(dx) > Math.abs(dy);
-      if (isZoomed || isHorizontal || box.closest('.fullscreen-mode')) {
+      const isVerticalPan = Math.abs(dy) > Math.abs(dx) && s.canPanY;
+      const shouldPan = isZoomed || isHorizontal || isVerticalPan || box.closest('.fullscreen-mode');
+
+      if (shouldPan) {
         if (e.cancelable) e.preventDefault();
         handlers.setPan(initPanX + dx, initPanY + dy);
       }
